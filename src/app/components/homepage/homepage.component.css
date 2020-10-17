@@ -1,0 +1,107 @@
+*:focus {
+    outline: none;
+}
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+}
+a, p, button, h1, h2, h3, h4, h5, h6, textarea {
+    font-size: 1rem;
+    line-height: 140%;
+    letter-spacing: 1px;
+    color: rgb(102, 102, 102);
+}
+a:hover {
+    text-decoration: underline;
+    color: rgb(150, 136, 16);
+}
+#intro {
+    display: inline-flex;
+    width: 100vw;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.logo-img {
+    width: 10%;
+    max-width: 450px;
+    min-width: 78px;
+}
+.top-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 11rem;
+}
+.top-nav ul li {
+    flex-direction: row;
+    align-items: flex-end;
+    width: calc(100% / 4.5);
+    min-width: 107px;
+    margin-bottom: 10px;
+    margin-right: 7px;
+}
+.top-nav ul li a {
+    text-decoration: none;
+}
+.brdrd {
+    border: 1px solid rgb(102, 102, 102);
+    border-radius: 7px;
+    padding: 10px;
+    background :rgb(150, 136, 16);
+    color: rgb(238, 238, 238);
+}
+.brdrd:hover {
+    background-color: rgb(102, 102, 102);
+    color: rgb(238, 238, 238);
+}
+.main-container {
+    position: relative;
+    width: 83%;
+    margin: 5rem auto;
+}
+.main-container h1 {
+    font-size: 2rem;
+    width: 60%;
+    min-width: 250px;
+}
+.content-img {
+    width: 65%;
+    max-width: 650px;
+    min-width: 230px;
+    float: right;
+}
+.c-img {
+    float: none;
+    margin-top: 4rem;
+}
+.data-description {
+    margin-top: 6rem;
+}
+.spanned_ {
+    color: rgb(150, 136, 16);
+    font-weight: 800;
+}
+._spanned_ {
+    color: rgb(150, 103, 16);
+    font-weight: 800;
+}
+#to-about {
+    padding: 1rem 1.7rem;
+    background-color: rgb(150, 136, 16);
+    color :rgb(238, 238, 238);
+    border: 1px solid rgb(102, 102, 102);
+    border-radius: 7px;
+    margin-top: 7rem;
+    cursor: pointer;
+}
+#to-about .h-c {
+    margin-left: 1.3rem;
+    transition: 0.5s all;
+}
+#to-about:hover .h-c {
+    margin-left: 2.3rem
+}
+.dd_ {
+    padding-top: 4rem;
+}

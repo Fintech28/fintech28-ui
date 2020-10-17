@@ -1,1 +1,76 @@
-<p>homepage works!</p>
+<div class="top-container" id = "intro">
+    <img src="assets/images/f28-logo.png" alt="logo-img" class = "logo-img">
+
+    <div class="top-nav" style="flex-grow: 7">
+        <nav>
+            <ul>
+                <li>
+                    <a href = "/home#intro">Intro</a>
+                </li>
+                <li>
+                    <a href = "/home#about">About</a>
+                </li>
+                <li>
+                    <a href = "/home#services">Services</a>
+                </li>
+                <li>
+                    <a href = "/home#contacts">Contacts</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="top-nav">
+        <nav>
+            <ul>
+                <li>
+                    <a routerLink = "/signup" onclick="return false;">Sign up</a>
+                </li>
+                <li>
+                    <a routerLink = "/login" class = "brdrd" onclick="return false;">Log In</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<hr>
+<main class="main-container">
+    <h1>
+        Seamless, Reliable Financial Management
+    </h1>
+
+    <img src="assets/images/mobile-money-transfer.png" alt="mobile-money" class = "content-img">
+
+    <section class="data-description">
+        <p>
+            <span class="spanned_">Fintech28</span> was created 
+            as a product in the <span class="_spanned_">GADS2020 community project</span>
+        </p>
+        <p>
+            Our aim is to help users access money transfer options, as well as instant loans.
+            We ensure the best delivery, so you can always count on us.
+        </p>
+        <button id="to-about">Learn more<span class = "h-c">&#10095;</span></button>
+    </section>
+    
+    <section class="data-description dd_" id = "about">
+        <p>
+            Our purpose is to provide you with a platform to 
+            manage how your cash flows without the hassle of tracking.
+        </p>
+        <p>
+            With our wholesome logging system, keep track of all your transactions and loan 
+            requests and payments
+            It is as simple as <a routerLink = '/signup' onclick="return false;">creating an account</a> and 
+            have access to our intuitive navigation. Every step is a sure step 
+            with <span class="spanned_">Fintech28</span>
+        </p><br/>
+        <p>
+            <strong>Deposit &amp; Withdraw money from the convenience of your phone or 
+            laptop, whenever, wherever.<br/><br/>Short on cash? Apply for an instant loan 
+            of up to Ksh. 100,000, and get approved within 3 hours.</strong>
+        </p>
+    </section>
+
+    <img src="assets/images/gads-logo.png" alt="gads" class = "content-img c-img">
+</main>
