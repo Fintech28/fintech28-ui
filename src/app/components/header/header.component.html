@@ -1,1 +1,47 @@
-<p>header works!</p>
+<div id="togglebtn" class = "h">
+    <i class="fa fa-bars fa-2x"></i>
+</div>
+<div class="header-container">
+    <div class="header-content">
+        <nav>
+            <ul>
+                <ul id = "user_section">
+                    <li class = "usrnm">
+                        <i class="fa fa-user"></i><span class="user_">&ensp;{{ loggedUser }}</span>
+                    </li>
+                    <section class="user-actionable d-none">
+                        <span class="ltltxt">{{ loggedUserPhone }}</span><br/>
+                        <span class="ltltxt">{{ loggedUserEmail }}</span>
+                        <li>
+                            <i class="fa fa-cog fa-cog-2x"></i><span class="user_act">&ensp;Settings</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-sign-out fa-sign-out-2x"></i><span class="user_act">&ensp;Log Out</span>
+                        </li>
+                        <hr/>
+                        <span class="ltltxt grnltlttxt">
+                           <i class="fa fa-check fa-check-2x"></i><span class="user_act">&ensp;Verified Profile</span>
+                        </span>
+                    </section>
+                </ul>
+                <li class = "acc_mthd">
+                    <a routerLink = '/deposit'>Deposit to my account</a>
+                </li>
+                <li class = "acc_mthd">
+                    <a routerLink = '/withdraw'>Withdraw from my account</a>
+                </li>
+                <li class = "acc_mthd">
+                    <a routerLink = '/get-loan'>Apply for loan</a>
+                </li>
+                <li class = "acc_mthd">
+                    <a [routerLink] = "['/repay-loan/', loanId]">Repay current loan</a>
+                </li>
+                <li class = "acc_mthd">
+                    <a routerLink = '/transactions'>View transactions log</a>
+                <li class = "acc_mthd">
+                    <a routerLink = '/lons'>View loan history</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

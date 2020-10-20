@@ -1,0 +1,104 @@
+.d-none {
+    display: none;
+}
+.d-block {
+    display: block;
+}
+#togglebtn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    margin: 13px 17px;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+    display: none;
+}
+.header-container {
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin: 0 10px;
+    height: 100vh;
+    width: 25%;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid rgba(102, 102, 102, 0.25);
+}
+.header-content {
+    position: relative;
+}
+.header-content nav ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+.header-content nav ul li.acc_mthd {
+    margin-bottom: 2rem;
+}
+#user_section {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 4rem 2rem;
+    text-align: center;
+}
+.usrnm {
+    cursor: pointer;
+    border-bottom: 1px solid rgb(102, 102, 102);
+}
+.header-content nav ul li a {
+    text-decoration: none;
+}
+.header-content nav ul li a:hover {
+    text-decoration: underline;
+}
+.user-actionable {
+    border: 1px solid rgba(102, 102, 102, 0.377);
+    border-radius: 7px;
+    background: rgb(255, 255, 255);
+    padding: 9px 7px;
+    margin-top: 9px;
+    width:  180px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 2rem 0;
+}
+.user-actionable li {
+    margin-top: 7px;
+    margin-bottom: 3px;
+    background :rgba(102, 102, 102, 0.048);
+    border: 1px solid rgba(102, 102, 102, 0.048);
+    color: rgba(102, 102, 102, 0.720);
+    padding: 3px 13px;
+    cursor: pointer;
+    text-align: left;
+}
+.user-actionable li:hover {
+    background :rgba(102, 102, 102, 0.25);
+    border: 1px solid rgba(102, 102, 102, 0.25);
+    color: rgb(150, 136, 16);
+}
+.ltltxt {
+    font-size: 0.8rem;
+    color: rgb(102, 102, 102);
+}
+.grnltlttxt {
+    color: rgb(150, 136, 16);
+}
+
+
+/* start media css */
+
+@media screen and (max-width: 768px) {
+    #togglebtn {
+        display: block;
+    }
+    .header-container {
+        display: none;
+    }
+}
+
+/* end media css */

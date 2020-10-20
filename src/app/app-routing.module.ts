@@ -7,6 +7,10 @@ import { LoginComponent } from './components/login/login.component';
 
 import { SignupComponent } from './components/signup/signup.component';
 
+import { DepositComponent } from './components/deposit/deposit.component';
+
+import { LoanRepaymentComponent } from './components/loan-repayment/loan-repayment.component';
+
 
 const routes: Routes = [
   {
@@ -20,6 +24,14 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'deposit',
+    component: DepositComponent
+  },
+  {
+    path: 'repay-loan/:loanId',
+    component: LoanRepaymentComponent
   },
   {
     path: '',
