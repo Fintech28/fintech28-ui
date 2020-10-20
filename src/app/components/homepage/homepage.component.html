@@ -23,10 +23,10 @@
     <div class="top-nav">
         <nav>
             <ul>
-                <li>
+                <li class = "extnav">
                     <a routerLink = "/signup">Sign up</a>
                 </li>
-                <li>
+                <li class = "extnav">
                     <a routerLink = "/login" class = "brdrd">Log In</a>
                 </li>
             </ul>
@@ -39,17 +39,19 @@
         Seamless, Reliable Financial Management
     </h1>
 
-    <img src="assets/images/mobile-money-transfer.png" alt="mobile-money" class = "content-img">
-
     <section class="data-description">
         <p>
             <span class="spanned_">Fintech28</span> was created 
             as a product in the <span class="_spanned_">GADS2020 community project</span>
         </p>
+
+        <img src="assets/images/mobile-money-transfer.png" alt="mobile-money" class = "content-img">
+
         <p>
             Our aim is to help users access money transfer options, as well as instant loans.
             We ensure the best delivery, so you can always count on us.
         </p>
+
         <button id="to-about">Learn more<span class = "h-c">&#10095;</span></button>
     </section>
     
@@ -59,7 +61,7 @@
             manage how your cash flows without the hassle of tracking.
         </p>
         <p>
-            With our wholesome logging system, keep track of all your transactions and loan 
+            With our wholesome logging system, keep automated track of all your transactions and loan 
             requests and payments
             It is as simple as <a routerLink = '/signup'>creating an account</a> and 
             have access to our intuitive navigation. Every step is a sure step 
@@ -73,4 +75,76 @@
     </section>
 
     <img src="assets/images/gads-logo.png" alt="gads" class = "content-img c-img">
+
+    <section class="data-description dd_" id = "services">
+        <p>
+            We offer <strong>services</strong> that enable you to easily save and withdraw money to and from 
+            your account. We provide a platform to enable cashless transactions.
+            This also includes loan applications that are credited to 
+            your <span class="spanned_">Fintech28</span> account, just like your normal deposit.
+        </p>
+        <p>
+            Also enjoy our friendly loan repayment options. You don't have to worry that you have 
+            a pending loan - we understand financial struggles.
+        </p>
+    </section>
+
+    <img src="assets/images/e-money.jpg" alt="gads" class = "content-img c-img">
+    
+    <section class="data-description dd_" id = "contacts">
+        <p>
+            Have any more questions?
+            Reach out to us via the form below, or follow our social media.
+        </p>
+
+        <section class="form-section">
+            <form action="" method="post">
+                <div class="input-content">
+                    <label for="email">Email<span class = "d-req">*</span></label>
+                    <input type="email" name="email" id="email" class = "inputfield">
+                </div>
+                <div class="input-content">
+                    <label for="name">Name<span class = "d-req">*</span></label>
+                    <input type="text" name="name" id="name" class = "inputfield">
+                </div>
+                <div class="input-content">
+                    <label for="comment">Your message<span class = "d-req">*</span></label>
+                    <textarea name="comment" id="comment"></textarea>
+                </div>
+                <div class="input-content">
+                    <button type="submit" class = "btn_p">Send</button>
+                </div>
+            </form>
+        </section>
+        
+        <section class="social">
+            <ul>
+                <li>
+                    <a href = "https://github.com/claudwatari95" target="_blank">
+                        <i class="fa fa-github fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href = "https://linkedin.com/in/watari-claud-kamau" target="_blank">
+                        <i class="fa fa-linkedin fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href = "https://facebook.com/in/claudkamau.watari" target="_blank">
+                        <i class="fa fa-facebook fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href = "https://instagram.com/in/claudwatari" target="_blank">
+                        <i class="fa fa-instagram fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <section class="copyright_">
+                &copy; <span class="date-content">{{ isThisYear }} Fintech28</span>
+            </section>
+        </section>
+
+    </section>
 </main>

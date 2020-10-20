@@ -69,7 +69,7 @@
     color: rgb(150, 103, 16);
     font-weight: 800;
 }
-#to-about {
+#to-about, .btn_p {
     padding: 1rem 1.7rem;
     background-color: rgb(150, 136, 16);
     color :rgb(238, 238, 238);
@@ -77,6 +77,12 @@
     border-radius: 7px;
     margin-top: 7rem;
     cursor: pointer;
+}
+.btn_p {
+    margin-top: 0;
+}
+.btn_p:hover {
+    background-color: rgb(103, 150, 16);
 }
 #to-about .h-c {
     margin-left: 1.3rem;
@@ -88,3 +94,129 @@
 .dd_ {
     padding-top: 4rem;
 }
+.form-section {
+    width: 70%;
+    padding: 13px;
+}
+.input-content, .input-content label {
+    display: block;
+}
+.input-content {
+    margin-bottom: 1.1rem;
+}
+.inputfield {
+    display: block;
+    padding: 10px;
+    width: 43%;
+    min-width: 200px;
+    color: rgb(102, 102, 102);
+    border: 1px solid rgb(102, 102, 102);
+    border-radius: 3px;
+    margin-top: 11px;
+}
+.inputfield:-webkit-autofill {
+    -webkit-text-fill-color:  rgb(102, 102, 102);
+    box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+    -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+}
+textarea {
+    padding: 10px;
+    width: 50%;
+    min-width: 200px;
+    min-height: 130px;
+}
+.d-req {
+    color: rgb(255, 0, 0);
+}
+.social {
+    margin-top: 2rem;
+    margin-bottom: -5rem;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.social ul {
+    list-style: none;
+}
+.social ul li {
+    display: inline-block;
+    margin-right: 3rem;
+}
+.copyright_ {
+    color: rgb(102, 102, 102);
+}
+
+/* start media css */
+
+@media screen and (max-width: 1155px) {
+    .top-nav ul {
+        padding-left: 7rem;
+    }
+    .top-nav ul li {
+        width: calc(100% / 5);
+    }
+    #to-about {
+        margin-top: 4rem;
+    }
+    .inputfield {
+        width: 56%;
+    }
+    textarea {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 1015px) {
+    .top-nav ul {
+        padding-left: 5rem;
+    }
+    .top-nav ul li {
+        width: calc(100% / 7);
+    }
+}
+
+@media screen and (max-width: 950px) {
+    /* .top-nav ul {
+        display: inline-block;
+    } */
+    .top-nav ul li.extnav {
+        margin-top: 25px;
+    }
+    #to-about {
+        margin-top: 2rem;
+    }
+    .data-description {
+        margin-top: 4rem;
+    }
+    .dd_ {
+        margin-top: 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    .content-img {
+        width: 80%;
+        float: none;
+    }
+    .inputfield {
+        width: 70%;
+    }
+    textarea {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 400px) {.content-img {
+    width: 100%;
+}
+    .form-section {
+        width: 100%;
+    }
+    .inputfield {
+        width: 85%;
+    }
+    textarea {
+        width: 96%;
+    }
+}
+
+/* end media css */
