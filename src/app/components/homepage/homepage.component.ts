@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-// import { faHome } from '@fortawesome/free-solid-svg-icons';
+import{ ActivatedRoute, Router } from '@angular/router';
+import {Observable, Subscription } from 'rxjs';
+import { ViewLoansService } from '../../services/view-loans.service';
 
 @Component({
   selector: 'app-homepage',
@@ -10,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 export class HomepageComponent implements OnInit {
 
   isThisYear = new Date().getFullYear();
-  constructor() { }
+  constructor(private viewLoans: ViewLoansService) { }
 
   ngOnInit(): void {
+    this.initBackend();
+  }
+  initBackend() {
+    this.viewLoans.getLoans().subscribe((res) => {
+      console.log(res);
+    });
   }
 
 }

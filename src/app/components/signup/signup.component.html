@@ -22,7 +22,7 @@
 
     <div class="form-container">
         <div class="form-content">
-            <form action="" class="form_">
+            <form class="form_">
                 <div class="input-content">
                     <label for="name">Name:</label>
                     <input type="text" name="name" id="name" class = "inputfield">
@@ -40,12 +40,12 @@
                     <input type="password" name="password" id="password" class = "inputfield">
                 </div>
                 <div class="input-content">
-                    <button type="submit" class = "btn_p">Create my account</button>
+                    <button type="button" class = "btn_p" (click) = "createUser()">Create my account</button>
                 </div>
             </form>
         </div>
     </div>
-    
+
     <section class="copyright_">
         &copy; <span class="date-content">{{ isThisYear }} Fintech28</span>
     </section>
