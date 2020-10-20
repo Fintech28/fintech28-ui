@@ -1,9 +1,44 @@
-<div class="top"></div>
-<h1>
-    404!<br/>Page Under Maintenance | <a routerLink = '/home'>Go back</a>
-</h1>
-<div class="error-container">
-    This page will be available soon. We're preparing to serve you better.
-</div>
+<div class="umbrella-container">
 
-<img src="assets/images/f28-logo.png" alt="logo-image" class = "err-l">
+    <section class="logo-content">
+        <img src="assets/images/f28-logo.png" alt="logo-image">
+    </section>
+
+    <div class="umbrella">
+        <div class="top-nav">
+            <nav>
+                <ul>
+                    <li>
+                        <a routerLink = '/home' class = "a_cov">Go back to main page</a>
+                    </li>
+                    <li>
+                        <strong>Don't have an account?&ensp;</strong>
+                        <a routerLink = '/signup' class = "a_cov">Click here to create one</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <div class="form-content">
+            <form action="" class="form_">
+                <div class="input-content">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" class = "inputfield">
+                </div>
+                <div class="input-content">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" class = "inputfield">
+                </div>
+                <div class="input-content">
+                    <button type="submit" class = "btn_p">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <section class="copyright_">
+        &copy; <span class="date-content">{{ isThisYear }} Fintech28</span>
+    </section>
+</div>
