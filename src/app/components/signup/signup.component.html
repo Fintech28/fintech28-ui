@@ -1,3 +1,4 @@
+<div id="alert_">Invalid name syntax. No special characters allowed</div>
 <div class="umbrella-container">
 
     <section class="logo-content">
@@ -25,19 +26,19 @@
             <form class="form_">
                 <div class="input-content">
                     <label for="name">Name:</label>
-                    <input type="text" name="name" id="name" class = "inputfield">
+                    <input type="text" name="name" id="name" class = "inputfield" [(ngModel)] = "userModel.name">
                 </div>
                 <div class="input-content">
                     <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" class = "inputfield">
+                    <input type="email" name="email" id="email" class = "inputfield" [(ngModel)] = "userModel.email">
                 </div>
                 <div class="input-content">
                     <label for="phone">Phone:</label>
-                    <input type="phone" name="phone" id="phone" class = "inputfield">
+                    <input type="phone" name="phone" id="phone" class = "inputfield" [(ngModel)] = "userModel.phone">
                 </div>
                 <div class="input-content">
                     <label for="password">Password:</label>
-                    <input type="password" name="password" id="password" class = "inputfield">
+                    <input type="password" name="password" id="password" class = "inputfield" autocomplete="off" [(ngModel)] = "userModel.password">
                 </div>
                 <div class="input-content">
                     <button type="button" class = "btn_p" (click) = "createUser()">Create my account</button>
