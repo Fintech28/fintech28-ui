@@ -1,3 +1,4 @@
+<div id="alert_"></div>
 <div class="umbrella-container">
 
     <section class="logo-content">
@@ -25,11 +26,11 @@
             <form action="" class="form_">
                 <div class="input-content">
                     <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" class = "inputfield">
+                    <input type="email" name="email" id="email" class = "inputfield" [(ngModel)] = "userModel.email">
                 </div>
                 <div class="input-content">
                     <label for="password">Password:</label>
-                    <input type="password" name="password" id="password" class = "inputfield">
+                    <input type="password" name="password" id="password" class = "inputfield" [(ngModel)] = "userModel.email">
                 </div>
                 <div class="input-content">
                     <button type="submit" class = "btn_p">Login</button>
