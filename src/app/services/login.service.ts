@@ -39,7 +39,7 @@ export class LoginService {
   loginUser(user) : Observable<any> {
     return this.http.post<any>(`${endpoint}/auth/login-user`, JSON.stringify(user), HttpOptions).pipe(
       map((_user) => {
-        _user.json();
+        
       }
     ), catchError(this.handleError<any>('Log in'))
     );

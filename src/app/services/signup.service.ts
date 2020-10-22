@@ -39,7 +39,7 @@ export class SignupService {
   createUser(user) : Observable<any> {
     return this.http.post<any>(`${endpoint}/auth/create-user`, JSON.stringify(user), HttpOptions).pipe(
       map((_user) => {
-        _user.json();
+        
       }
     ), catchError(this.handleError<any>('Sign up'))
     );

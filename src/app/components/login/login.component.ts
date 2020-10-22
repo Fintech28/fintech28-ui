@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createUser() {
+  loginUser() {
     const checkerbtn = document.querySelector('.btn_p');
     const alert_ = document.querySelector('#alert_') as HTMLDivElement;
 
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       this.someData = res;
 
       const revertBtnText = () => {
-        checkerbtn.textContent = 'Create my account';
+        checkerbtn.textContent = 'Log in';
         alert_.style.display = 'none';
         localStorage.removeItem('f28err');
       };
