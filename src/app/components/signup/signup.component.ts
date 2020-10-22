@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import{ ActivatedRoute, Router } from '@angular/router';
-import {Observable, Subscription } from 'rxjs';
 import { SignupService } from '../../services/signup.service';
 
 @Component({
@@ -37,11 +36,21 @@ export class SignupComponent implements OnInit {
 
       this.someData = res;
 
+      const revertBtnText = () => {
+        checkerbtn.textContent = 'Create my account';
+        alert_.style.display = 'none';
+        localStorage.removeItem('f28err');
+      };
+
       if(res !== undefined && typeof res === 'object') {
 
         localStorage.setItem('f28authkey', this.someData.data.token);
-        checkerbtn.textContent = 'Redirecting...'
+        checkerbtn.textContent = 'Redirecting...';
+        alert_.textContent = this.someData.data.message;
+        alert_.style.display = 'block';
         console.log(this.someData);
+        
+        setTimeout(revertBtnText, 3000);
 
       } else {
 
@@ -52,12 +61,6 @@ export class SignupComponent implements OnInit {
         alert_.textContent = errMsg;
         alert_.style.display = 'block';
 
-        const revertBtnText = () => {
-          checkerbtn.textContent = 'Create my account';
-          alert_.style.display = 'none';
-          localStorage.removeItem('f28err');
-        }
-
         setTimeout(revertBtnText, 3000);
       }
     });
@@ -65,4 +68,4 @@ export class SignupComponent implements OnInit {
 
   };
 
-}
+};

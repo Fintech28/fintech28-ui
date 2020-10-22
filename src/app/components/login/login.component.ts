@@ -33,11 +33,21 @@ export class LoginComponent implements OnInit {
 
       this.someData = res;
 
+      const revertBtnText = () => {
+        checkerbtn.textContent = 'Create my account';
+        alert_.style.display = 'none';
+        localStorage.removeItem('f28err');
+      };
+
       if(res !== undefined && typeof res === 'object') {
 
         localStorage.setItem('f28authkey', this.someData.data.token);
-        checkerbtn.textContent = 'Redirecting...'
+        checkerbtn.textContent = 'Redirecting...';
+        alert_.textContent = this.someData.data.message;
+        alert_.style.display = 'block';
         console.log(this.someData);
+        
+        setTimeout(revertBtnText, 3000);
 
       } else {
 
@@ -47,12 +57,6 @@ export class LoginComponent implements OnInit {
 
         alert_.textContent = errMsg;
         alert_.style.display = 'block';
-
-        const revertBtnText = () => {
-          checkerbtn.textContent = 'Create my account';
-          alert_.style.display = 'none';
-          localStorage.removeItem('f28err');
-        }
 
         setTimeout(revertBtnText, 3000);
       }
