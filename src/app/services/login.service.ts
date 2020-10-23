@@ -41,7 +41,6 @@ export class LoginService {
     return this.http.post<any>(`${endpoint}/auth/login-user`, JSON.stringify(user), HttpOptions).pipe(
       map((_user) => {
         console.log(_user);
-        console.log('service success.....')
 ;      }
     ), catchError(this.handleError<any>('Log in'))
     );
