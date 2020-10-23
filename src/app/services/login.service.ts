@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ɵConsole } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, retry, tap, map } from 'rxjs/operators';
@@ -30,6 +30,7 @@ export class LoginService {
       console.error(error.error);
       console.log(`${operation} failed: ${error.message}`);
 
+      console.log(error.error);
       localStorage.setItem('f28err', error.error.error);
 
       return of(result as T);
@@ -39,8 +40,9 @@ export class LoginService {
   loginUser(user) : Observable<any> {
     return this.http.post<any>(`${endpoint}/auth/login-user`, JSON.stringify(user), HttpOptions).pipe(
       map((_user) => {
-        
-      }
+        console.log(_user);
+        console.log('service success.....')
+;      }
     ), catchError(this.handleError<any>('Log in'))
     );
   }

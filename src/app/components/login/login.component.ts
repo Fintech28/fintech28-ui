@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
         localStorage.setItem('f28authkey', this.someData.data.token);
         checkerbtn.textContent = 'Redirecting...';
-        alert_.textContent = this.someData.data.message;
+        alert_.textContent = this.someData.message;
         alert_.style.display = 'block';
         console.log(this.someData);
         
@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
 
         alert_.textContent = errMsg;
         alert_.style.display = 'block';
+        console.log(this.someData);
 
         setTimeout(revertBtnText, 3000);
       }

@@ -11,6 +11,8 @@ import { DepositComponent } from './components/deposit/deposit.component';
 
 import { LoanRepaymentComponent } from './components/loan-repayment/loan-repayment.component';
 
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 
 const routes: Routes = [
   {
@@ -32,6 +34,10 @@ const routes: Routes = [
   {
     path: 'repay-loan/:loanId',
     component: LoanRepaymentComponent
+  },
+  {
+    path: 'dashboard/user/:userId',
+    component: DashboardComponent
   },
   {
     path: '',

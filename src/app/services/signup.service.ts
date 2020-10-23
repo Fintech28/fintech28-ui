@@ -39,9 +39,11 @@ export class SignupService {
   createUser(user) : Observable<any> {
     return this.http.post<any>(`${endpoint}/auth/create-user`, JSON.stringify(user), HttpOptions).pipe(
       map((_user) => {
-        
+        console.log(_user);
+        console.log('service success.....')
+        localStorage.setItem('f28authkey-test', _user.data.token);
       }
     ), catchError(this.handleError<any>('Sign up'))
     );
-  }
-}
+  };
+};
