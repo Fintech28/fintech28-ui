@@ -36,7 +36,7 @@ const routes: Routes = [
     component: LoanRepaymentComponent
   },
   {
-    path: 'dashboard/',
+    path: 'dashboard',
     component: DashboardComponent
   },
   {
