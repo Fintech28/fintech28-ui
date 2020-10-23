@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  userId:Number;
   constructor() { }
 
   ngOnInit(): void {
+    this.userId = 1;
   }
 
 }
