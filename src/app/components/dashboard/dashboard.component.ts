@@ -17,12 +17,11 @@ export class DashboardComponent implements OnInit {
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit(): void {
-    this.userId = 1;
     this.getUserData();
   }
 
   getUserData() {
-    this.subscription = this.dashboardService.getAuthData().subscribe((res) => console.log(res));
+    this.subscription = this.dashboardService.getAuthData().subscribe((res) => console.log('Auth key verified...'));
   }
 
 }
