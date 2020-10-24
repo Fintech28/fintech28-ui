@@ -8,13 +8,25 @@ const endpoint = globalUri.apiGlobal;
 
 const token = globalUri.token;
 
-const HttpOptions = {
-  headers: new HttpHeaders({
-    'Authorization': token,
-    'Content-Type': 'application/json',
-    'Accept': 'application/json'
-  })
-};
+var HttpOptions;
+
+if(!token) {
+  console.log('No teoken found');
+  HttpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    })
+  };
+} else {
+  HttpOptions = {
+    headers: new HttpHeaders({
+      'Authorization': token,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    })
+  };
+}
 
 @Injectable({
   providedIn: 'root'

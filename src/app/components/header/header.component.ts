@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+
+import { DashboardService } from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-header',
@@ -7,20 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  subscription:Subscription;
+
   loanId = 2;
-  loggedUser = 'Claud Watari';
-  loggedUserPhone = '0700000000';
-  loggedUserEmail = 'claud@mail.com'
+  loggedUser:string;
+  loggedUserPhone:string;
+  loggedUserEmail:string;
   displayUserMenu = () => {};
   displayUserOptions = () => {};
 
-  constructor() { }
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit(): void {
-    this.loggedUser = 'Claud Kamau Watari';
     this.loanId = 3;
-    this.loggedUserPhone = '+254705724562';
-    this.loggedUserEmail = 'claudwatari95@gmail.com';
     this.displayUserMenu = () => {
       const toToggle = document.querySelector('.user-actionable');
       const toggleButton = document.querySelector('.usrnm');
@@ -49,6 +51,15 @@ export class HeaderComponent implements OnInit {
 
     this.displayUserMenu();
     this.displayUserOptions();
-  }
 
-}
+    this.getUserData();
+  };
+
+  getUserData() {
+    this.subscription = this.dashboardService.getAuthData().subscribe((res) => {
+      this.loggedUserEmail = res.data.email;
+      this.loggedUserPhone = res.data.phone;
+      this.loggedUser = res.data.name;
+    });
+  }
+};
