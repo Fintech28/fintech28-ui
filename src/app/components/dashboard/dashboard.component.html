@@ -1,2 +1,21 @@
 <app-header></app-header>
-<p><strong><u>Dashboard</u></strong></p>
+<div id="main-content-umbrella-container">
+    <div class="top-content">
+        <p><strong><u>Dashboard</u></strong></p>
+        <section class="data-container">
+            <div class="stat-container">
+                <h3 *ngIf = 'userStatus === false' class = "unv-stat" style = "color: rgb(216, 215, 215); font-size: 13px;">
+                    <strong>Your Account is still unverified:</strong>
+                    Wait for an admin to verify your account.
+                </h3>
+                <h3 *ngIf = 'userStatus === true' class = "v-stat" style = "color: rgb(216, 215, 215); font-size: 13px;">
+                    <strong>Verified<span class = "i-spanned"><i class = "fa fa-checkmark"></i></span></strong>
+                </h3>
+            </div>
+        </section>
+        <section class="data-container d-c">
+            <h3><strong>Your Balance:</strong></h3>
+            <p><strong>Ksh. {{ userBalance }}</strong></p>
+        </section>
+    </div>
+</div>

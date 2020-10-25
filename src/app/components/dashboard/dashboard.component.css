@@ -1,0 +1,26 @@
+#main-content-umbrella-container {
+    padding: 10px;
+}
+.data-container {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.stat-container {
+    position: absolute;
+    margin: 0 auto;
+}
+.d-c {
+    margin-top: 7rem;
+}
+.unv-stat, .v-stat {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+}
+.unv-stat {
+    background: rgb(156, 1, 1);
+}
+.v-stat {
+    background: rgb(89, 156, 1);
+}

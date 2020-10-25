@@ -11,8 +11,8 @@ import { DashboardService } from '../../services/dashboard.service';
 export class DashboardComponent implements OnInit {
 
   subscription:Subscription;
-  userId:Number;
-  userData:any;
+  userBalance:Number;
+  userStatus:boolean;
 
   constructor(private dashboardService: DashboardService) { }
 
@@ -21,7 +21,10 @@ export class DashboardComponent implements OnInit {
   }
 
   getUserData() {
-    this.subscription = this.dashboardService.getAuthData().subscribe((res) => console.log('Auth key verified...'));
+    this.subscription = this.dashboardService.getAuthData().subscribe((res) => {
+      this.userBalance = res.data.balance;
+      this.userStatus = res.data.status;
+    });
   }
 
 }
