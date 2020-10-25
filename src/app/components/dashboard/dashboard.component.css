@@ -32,7 +32,7 @@
     background: rgb(89, 156, 1);
 }
 .menu-container .menu-content ul {
-    width: 50%;
+    width: 66%;
     list-style: none;
 }
 .menu-container .menu-content li {
@@ -41,9 +41,9 @@
     cursor: pointer;
     background-color: rgb(199, 199, 199);
     border: 1px solid rgb(122, 121, 121);
-    width: 130px;
+    width: 140px;
     height: 130px;
-    margin-right: 1rem;
+    margin-right: 15px;
     margin-bottom: 1rem;
     vertical-align: middle;
     text-align: center;
@@ -61,12 +61,20 @@
         width: 87%;
     }
     .menu-container .menu-content ul {
-        width: 90%;
+        width: 94%;
     }
 }
 @media screen and (max-width: 640px) {
     .data-container {
         width: 83%;
+    }
+}
+@media screen and (max-width: 425px) {
+    .data-container {
+        width: 78%;
+    }
+    .menu-container .menu-content li {
+        width: 60%;
     }
 }
 
