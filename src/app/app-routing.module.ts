@@ -19,6 +19,8 @@ import { LoanRepaymentComponent } from './components/loan-repayment/loan-repayme
 
 import { ViewTransactionsComponent } from './components/view-transactions/view-transactions.component';
 
+import { ViewLoansComponent } from './components/view-loans/view-loans.component';
+
 
 const routes: Routes = [
   {
@@ -56,6 +58,10 @@ const routes: Routes = [
   {
     path: 'view-transactions',
     component: ViewTransactionsComponent
+  },
+  {
+    path: 'view-loans',
+    component: ViewLoansComponent
   },
   {
     path: '',
