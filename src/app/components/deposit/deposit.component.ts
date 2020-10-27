@@ -8,7 +8,7 @@ import { DashboardService } from '../../services/dashboard.service';
   templateUrl: './deposit.component.html',
   styleUrls: ['./deposit.component.css']
 })
-export class DepositComponent implements OnInit {
+export class DepositComponent implements OnInit, OnDestroy {
 
   pageTitle:string;
   subscription:Subscription;
@@ -23,7 +23,7 @@ export class DepositComponent implements OnInit {
       this.userBalance = res.data.balance;
       this.userStatus = res.data.status;
       this.userPhone= res.data.phone;
-      this.pageTitle = 'Fintech28 | Dashboard';
+      this.pageTitle = 'Fintech28 | Deposit';
     });
   };
 
@@ -35,5 +35,9 @@ export class DepositComponent implements OnInit {
     alertbox.style.display = 'block';
     alertbox.textContent = 'Some feedback from API to display here';
   };
+
+  ngOnDestroy() {
+    if(this.subscription) this.subscription.unsubscribe();
+  }
 
 };

@@ -23,7 +23,7 @@ export class WithdrawComponent implements OnInit, OnDestroy {
       this.userBalance = res.data.balance;
       this.userStatus = res.data.status;
       this.userPhone= res.data.phone;
-      this.pageTitle = 'Fintech28 | Dashboard';
+      this.pageTitle = 'Fintech28 | Withdraw';
     });
   };
 

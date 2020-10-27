@@ -11,6 +11,8 @@ import { DepositComponent } from './components/deposit/deposit.component';
 
 import { WithdrawComponent } from './components/withdraw/withdraw.component';
 
+import { LoanApplicationComponent } from './components/loan-application/loan-application.component';
+
 import { LoanRepaymentComponent } from './components/loan-repayment/loan-repayment.component';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -40,6 +42,10 @@ const routes: Routes = [
   {
     path: 'withdraw',
     component: WithdrawComponent
+  },
+  {
+    path: 'apply-for-loan',
+    component: LoanApplicationComponent
   },
   {
     path: 'repay-loan/:loanId',
