@@ -19,8 +19,11 @@
                             <i class="fa fa-sign-out fa-sign-out-2x"></i><span class="user_act">&ensp;Log Out</span>
                         </li>
                         <hr/>
-                        <span class="ltltxt grnltlttxt">
+                        <span class="ltltxt grnltlttxt" *ngIf = "loggedUserStatus === true">
                            <i class="fa fa-check fa-check-2x"></i><span class="user_act">&ensp;Verified Profile</span>
+                        </span>
+                        <span class="ltltxt redltlttxt" *ngIf = "loggedUserStatus === false">
+                           <i class="fa fa-times fa-times-2x"></i><span class="user_act">&ensp;Not verified</span>
                         </span>
                     </section>
                 </ul>

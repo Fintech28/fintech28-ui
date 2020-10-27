@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DepositComponent implements OnInit {
 
+  pageTitle:string;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.pageTitle = 'Fintech28 | Deposit';
   }
 
 }

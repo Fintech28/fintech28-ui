@@ -8,11 +8,12 @@ import { DashboardService } from '../../services/dashboard.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
 
   subscription:Subscription;
   userBalance:Number;
   userStatus:boolean;
+  pageTitle:string;
 
   constructor(private dashboardService: DashboardService) { }
 
@@ -24,7 +25,11 @@ export class DashboardComponent implements OnInit {
     this.subscription = this.dashboardService.getAuthData().subscribe((res) => {
       this.userBalance = res.data.balance;
       this.userStatus = res.data.status;
+      this.pageTitle = 'Fintech28 | Dashboard'
     });
   }
 
+  ngOnDestroy() {
+    if(this.subscription) this.subscription.unsubscribe();
+  }
 }

@@ -16,6 +16,8 @@ export class HeaderComponent implements OnInit {
   loggedUser:string;
   loggedUserPhone:string;
   loggedUserEmail:string;
+  loggedUserStatus:boolean;
+
   displayUserMenu = () => {};
   displayUserOptions = () => {};
 
@@ -60,6 +62,7 @@ export class HeaderComponent implements OnInit {
       this.loggedUserEmail = res.data.email;
       this.loggedUserPhone = res.data.phone;
       this.loggedUser = res.data.name;
+      this.loggedUserStatus = res.data.status;
     });
   }
 };
