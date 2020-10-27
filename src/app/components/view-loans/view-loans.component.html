@@ -36,10 +36,10 @@
     </div><hr/>
     <div class="menu-container">
         <div class="menu-content">
-            <p><i>Display this if valid loan transaction log<br/>
+            <p><i>Display this if valid loan log<br/>
                 Will add conditional when implementing service subscription</i></p>
             <div class="top-content">
-                <p><strong><u>My Transactions</u></strong></p>
+                <p><strong><u>My loan history</u></strong></p>
                 <section class="data-container">
                     <div class="stat-container">
                         <h3 class = "v-stat" style = "color: rgb(216, 215, 215); font-size: 13px;">
@@ -54,23 +54,26 @@
             </div>
             <ul class="menu-lister">
                 <li *ngFor = 'let transaction of userTransactions'>
-                    <p *ngIf = "transaction.transactionType === 'Deposit'">
-                        {{ transaction.transactionType }}
-                    </p>
-                    <p *ngIf = "transaction.transactionType === 'Withdrawal'">
-                         {{ transaction.transactionType }}
-                    </p>
-                    <p *ngIf = "transaction.transactionType === 'Deposit'" class = "grnltlttxt">
-                        Ksh. {{ transaction.amount }}
-                    </p>
-                    <p *ngIf = "transaction.transactionType === 'Withdrawal'" class = "redltlttxt">
-                        Ksh. {{ transaction.amount }}
+                    <p>
+                       Ksh. {{ transaction.principal }}
                     </p>
                     <p>
-                        {{ transaction.dateTime }}
+                        {{ transaction.dateBorrowed }}
+                    </p>
+                    <p *ngIf = 'transaction.isFullyPaid === false' class = "redltlttxt">
+                        Pending repayment
+                    </p>
+                    <p *ngIf = 'transaction.isFullyPaid === true' class = "grnltlttxt">
+                        Is Paid
                     </p>
                 </li>
             </ul>
+            <div class="new-app-container" *ngIf = 'hasPendingLoan === true'>
+                <p>Repay your existing loan to qualify for a new one</p>
+            </div>
+            <div class="new-app-container" *ngIf = 'hasPendingLoan === false'>
+                <a routerLink = '/apply-for-loan'>Apply for new loan</a>
+            </div>
         </div>
     </div>
 </div>

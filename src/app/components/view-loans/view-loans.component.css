@@ -95,6 +95,13 @@
     cursor: pointer;
     width: 100%;
 }
+.grnltlttxt {
+    color: rgb(89, 156, 1);
+}
+.redltlttxt {
+    color: rgb(150, 16, 16);
+}
+
 /* start media css */
 
 @media screen and (max-width: 768px) {

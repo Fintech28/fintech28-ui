@@ -17,6 +17,7 @@ export class ViewLoansComponent implements OnInit {
   pageTitle:string;
   userTransactions:any;
   userPhone:string;
+  hasPendingLoan:boolean;
 
   constructor(private dashboardService: DashboardService) { }
 
@@ -34,34 +35,33 @@ export class ViewLoansComponent implements OnInit {
 
     this.userTransactions = [
       {
-        transactionType: 'Deposit',
+        principal: 45500,
         amount: 450,
-        dateTime: '2020/10/27'
+        dateBorrowed: '2020/10/27',
+        isFullyPaid: false
       },
       {
-        transactionType: 'Withdrawal',
-        amount: 100,
-        dateTime: '2020/10/18'
+        principal: 67000,
+        amount: 450,
+        dateBorrowed: '2020/10/09',
+        isFullyPaid: true
       },
       {
-        transactionType: 'Withdrawal',
-        amount: 1050,
-        dateTime: '2020/10/06'
+        principal: 13000,
+        amount: 450,
+        dateBorrowed: '2020/08/28',
+        isFullyPaid: true
       },
-      {
-        transactionType: 'Deposit',
-        amount: 10000,
-        dateTime: '2020/10/02'
-      },
-      {
-        transactionType: 'Deposit',
-        amount: 750,
-        dateTime: '2020/09/23'
-      }
     ];
-    this.userBalance = this.userTransactions.reduce((a, b) => ({amount: a.amount + b.amount})).amount;
 
-    this.userBalance = this.userBalance;
+    this.userTransactions.forEach(transaction => {
+      if(transaction.isFullyPaid === true) return this.hasPendingLoan = false;
+      else this.hasPendingLoan = true;
+    });
+
+    console.log(this.hasPendingLoan);
+
+    this.userBalance = 121350;
   };
   
   processRequest() {
