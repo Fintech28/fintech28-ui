@@ -22,7 +22,7 @@ export class ViewTransactionsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getUserData();
-  }
+  };
 
   getUserData() {
     this.subscription = this.dashboardService.getAuthData().subscribe((res) => {
@@ -63,7 +63,7 @@ export class ViewTransactionsComponent implements OnInit, OnDestroy {
 
     this.userBalance = this.userBalance;
   };
-  
+
   processRequest() {
     const btn = document.querySelector('#button_');
     const alertbox = document.querySelector('#alert_') as HTMLDivElement;
@@ -72,6 +72,7 @@ export class ViewTransactionsComponent implements OnInit, OnDestroy {
     alertbox.style.display = 'block';
     alertbox.textContent = 'Some feedback from API to display here';
   };
+
   ngOnDestroy() {
     if(this.subscription) this.subscription.unsubscribe
   }

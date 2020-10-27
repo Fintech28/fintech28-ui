@@ -1,1 +1,76 @@
-<p>view-loans works!</p>
+<title>{{ pageTitle }}</title>
+<app-header></app-header>
+<div id="main-content-umbrella-container">
+    <div class="top-content">
+        <p><strong><u>My Loan history</u></strong></p>
+        <section class="data-container">
+            <div class="stat-container">
+                <h3 *ngIf = 'userStatus === false' class = "unv-stat" style = "color: rgb(216, 215, 215); font-size: 13px;">
+                    <strong>Your Account is still unverified:</strong>
+                    Wait for an admin to verify your account.
+                </h3>
+                <h3 *ngIf = 'userStatus === true' class = "v-stat" style = "color: rgb(216, 215, 215); font-size: 13px;">
+                    <strong>Verified<span class = "i-spanned"><i class = "fa fa-checkmark"></i></span></strong>
+                </h3>
+            </div>
+        </section>
+        <section class="data-container d-c">
+            <h3><strong>Your Balance:</strong></h3>
+            <p><strong>Ksh. {{ userBalanceUnverified }}</strong></p>
+        </section>
+        <div class="contact-container">
+            <p>Want to contact us to confirm your account verification?<br/>
+            Send a message by filling the form below.</p>
+            <form action="" class = "form_">
+              <div class="input-container">
+                  <label for="amount">Your phone:</label>
+                  <input type="text" class = "inputfield" name = "amount" [(ngModel)] = "userPhone" readonly>
+              </div>
+              <div class="input-container">
+                  <label for="amount">Sunject</label>
+                  <input type="text" class = "inputfield" name = "email" value = "Account verification&hellip;">
+              </div>
+                <button type="button" id = "button_" (click) = 'processRequest()'>Send Inquiry</button>
+            </form>
+        </div>
+    </div><hr/>
+    <div class="menu-container">
+        <div class="menu-content">
+            <p><i>Display this if valid loan transaction log<br/>
+                Will add conditional when implementing service subscription</i></p>
+            <div class="top-content">
+                <p><strong><u>My Transactions</u></strong></p>
+                <section class="data-container">
+                    <div class="stat-container">
+                        <h3 class = "v-stat" style = "color: rgb(216, 215, 215); font-size: 13px;">
+                            <strong>Verified&ensp;<span class = "i-spanned"><i class = "fa fa-check fa-check-2x"></i></span></strong>
+                        </h3>
+                    </div>
+                </section>
+                <section class="data-container d-c">
+                    <h3><strong>Your Balance:</strong></h3>
+                    <p><strong>Ksh. {{ userBalance }}</strong></p>
+                </section>
+            </div>
+            <ul class="menu-lister">
+                <li *ngFor = 'let transaction of userTransactions'>
+                    <p *ngIf = "transaction.transactionType === 'Deposit'">
+                        {{ transaction.transactionType }}
+                    </p>
+                    <p *ngIf = "transaction.transactionType === 'Withdrawal'">
+                         {{ transaction.transactionType }}
+                    </p>
+                    <p *ngIf = "transaction.transactionType === 'Deposit'" class = "grnltlttxt">
+                        Ksh. {{ transaction.amount }}
+                    </p>
+                    <p *ngIf = "transaction.transactionType === 'Withdrawal'" class = "redltlttxt">
+                        Ksh. {{ transaction.amount }}
+                    </p>
+                    <p>
+                        {{ transaction.dateTime }}
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
