@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.subscription = this.dashboardService.getAuthData().subscribe((res) => {
       this.userBalance = res.data.balance;
       this.userStatus = res.data.status;
-      this.pageTitle = 'Fintech28 | Dashboard'
+      this.pageTitle = 'Fintech28 | Dashboard';
     });
   }
 
