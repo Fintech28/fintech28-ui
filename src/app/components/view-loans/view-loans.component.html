@@ -71,7 +71,7 @@
             <div class="new-app-container" *ngIf = 'hasPendingLoan === true'>
                 <p>Repay your existing loan to qualify for a new one</p>
             </div>
-            <div class="new-app-container" *ngIf = 'hasPendingLoan === false'>
+            <div class="new-app-container" *ngIf = '!hasPendingLoan'>
                 <a routerLink = '/apply-for-loan'>Apply for new loan</a>
             </div>
         </div>

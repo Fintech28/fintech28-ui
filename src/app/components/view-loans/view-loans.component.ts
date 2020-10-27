@@ -55,8 +55,10 @@ export class ViewLoansComponent implements OnInit {
     ];
 
     this.userTransactions.forEach(transaction => {
-      if(transaction.isFullyPaid === true) return this.hasPendingLoan = false;
-      else this.hasPendingLoan = true;
+      if(transaction.isFullyPaid === false) {
+        console.log(transaction);
+        return this.hasPendingLoan = true;
+      }
     });
 
     console.log(this.hasPendingLoan);
