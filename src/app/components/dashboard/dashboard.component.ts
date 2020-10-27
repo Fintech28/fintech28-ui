@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getUserData();
-  }
+  };
 
   getUserData() {
     this.subscription = this.dashboardService.getAuthData().subscribe((res) => {
@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       this.userStatus = res.data.status;
       this.pageTitle = 'Fintech28 | Dashboard';
     });
-  }
+  };
 
   ngOnDestroy() {
     if(this.subscription) this.subscription.unsubscribe();
