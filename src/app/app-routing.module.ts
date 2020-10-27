@@ -9,6 +9,8 @@ import { SignupComponent } from './components/signup/signup.component';
 
 import { DepositComponent } from './components/deposit/deposit.component';
 
+import { WithdrawComponent } from './components/withdraw/withdraw.component';
+
 import { LoanRepaymentComponent } from './components/loan-repayment/loan-repayment.component';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -28,16 +30,20 @@ const routes: Routes = [
     component: SignupComponent
   },
   {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
     path: 'deposit',
     component: DepositComponent
   },
   {
-    path: 'repay-loan/:loanId',
-    component: LoanRepaymentComponent
+    path: 'withdraw',
+    component: WithdrawComponent
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent
+    path: 'repay-loan/:loanId',
+    component: LoanRepaymentComponent
   },
   {
     path: '',

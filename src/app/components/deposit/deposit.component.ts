@@ -34,6 +34,6 @@ export class DepositComponent implements OnInit {
     btn.textContent = 'Processing...';
     alertbox.style.display = 'block';
     alertbox.textContent = 'Some feedback from API to display here';
-  }
+  };
 
-}
+};
