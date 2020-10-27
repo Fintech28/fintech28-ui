@@ -1,1 +1,26 @@
-<p>loan-repayment works!</p>
+<title>{{ pageTitle }}</title>
+<div id="alert_"></div>
+<app-header></app-header>
+<div id="main-content-umbrella-container">
+    <div class="top-content">
+        <p><strong><u>Repay loan</u></strong></p>
+        <section class="data-container">
+        </section>
+    </div>
+    <div class="menu-container">
+        <div class="menu-content">
+          <form action="" class = "form_">
+              <p><strong>Loan Id: <span class = "sp_">{{ loanId }}</span></strong></p>
+            <div class="input-container">
+                <label for="amount">Your phone:</label>
+                <input type="text" class = "inputfield" name = "amount" [(ngModel)] = "userPhone" readonly>
+            </div>
+            <div class="input-container">
+                <label for="amount">Enter amount</label>
+                <input type="number" class = "inputfield" name = "amount">
+            </div>
+              <button type="button" id = "button_" (click) = 'processRequest()'>Send Request</button>
+          </form>
+        </div>
+    </div>
+</div>
