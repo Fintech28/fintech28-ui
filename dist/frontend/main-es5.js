@@ -3353,11 +3353,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             if (transaction.isFullyPaid === false) {
               console.log(transaction);
               return _this8.hasPendingLoan = true;
-            } // console.log(transaction);
-            // this.hasPendingLoan = true;
-
-          }); // this.hasPendingLoan = true;
-
+            }
+          });
           console.log(this.hasPendingLoan);
           this.userBalance = 121350;
         }
@@ -3652,7 +3649,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.hasPendingLoan === false);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.hasPendingLoan);
         }
       },
       directives: [_header_header_component__WEBPACK_IMPORTED_MODULE_2__["HeaderComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgForm"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["NgModel"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLinkWithHref"]],
@@ -4527,7 +4524,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var HttpOptions;
 
     if (!token) {
-      console.log('No teoken found');
       HttpOptions = {
         headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
           'Content-Type': 'application/json',
@@ -4682,7 +4678,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function loginUser(user) {
           return this.http.post("".concat(endpoint, "/auth/login-user"), JSON.stringify(user), HttpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (_user) {
             console.log(_user);
-            ;
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError('Log in')));
         }
       }]);
