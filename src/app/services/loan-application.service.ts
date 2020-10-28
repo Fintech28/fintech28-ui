@@ -31,6 +31,7 @@ if(!token) {
 @Injectable({
   providedIn: 'root'
 })
+
 export class LoanApplicationService {
 
   constructor(private http: HttpClient) { }
@@ -52,7 +53,7 @@ export class LoanApplicationService {
     }
   };
 
-  apllyForLoan(amount) : Observable<any> {
+  applyForLoan(amount) : Observable<any> {
     return this.http.post<any>(`${endpoint}/loan-application`, JSON.stringify(amount), HttpOptions).pipe(
       map((_amount) => {
         console.log(_amount);
