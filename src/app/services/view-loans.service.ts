@@ -17,25 +17,13 @@ const HttpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class ViewLoansService {
 
   constructor(private http: HttpClient) { }
 
-  private extractData(res: Response) {
-    let body = res;
-    return body || {};
-  };
-
-  private handleError<T>(operation = 'operation', result ?: T) {
-    return (error: any) : Observable<T> => {
-      console.error(error);
-      console.log(`${operation} failed: ${error.message}`);
-
-      return of(result as T);
-    }
-  };
-
   getLoans() : Observable<any> {
     return this.http.get<any>(`${endpoint}/see-loans`, HttpOptions);
-  }
-}
+  };
+
+};
