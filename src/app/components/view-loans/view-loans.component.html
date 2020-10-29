@@ -49,11 +49,11 @@
                 </section>
                 <section class="data-container d-c">
                     <h3><strong>Your Balance:</strong></h3>
-                    <p><strong>Ksh. {{ userBalance }}</strong></p>
+                    <p><strong>Ksh. {{ userBalanceUnverified }}</strong></p>
                 </section>
             </div>
             <ul class="menu-lister">
-                <li *ngFor = 'let transaction of userTransactions'>
+                <!-- <li *ngFor = 'let transaction of userTransactions'>
                     <p>
                        Ksh. {{ transaction.principal }}
                     </p>
@@ -66,14 +66,14 @@
                     <p *ngIf = 'transaction.isFullyPaid === true' class = "grnltlttxt">
                         Is Paid
                     </p>
-                </li>
+                </li> -->
             </ul>
-            <div class="new-app-container" *ngIf = 'hasPendingLoan === true'>
+            <!-- <div class="new-app-container" *ngIf = 'hasPendingLoan === true'>
                 <p>Repay your existing loan to qualify for a new one</p>
             </div>
             <div class="new-app-container" *ngIf = '!hasPendingLoan'>
                 <a routerLink = '/apply-for-loan'>Apply for new loan</a>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
