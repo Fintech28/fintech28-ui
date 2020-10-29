@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 
 import { DashboardService } from '../../services/dashboard.service';
 
+import { ViewLoansService } from '../../services/view-loans.service';
+
 @Component({
   selector: 'app-view-loans',
   templateUrl: './view-loans.component.html',
@@ -11,7 +13,7 @@ import { DashboardService } from '../../services/dashboard.service';
 export class ViewLoansComponent implements OnInit {
   
   subscription:Subscription;
-  userBalance:number;
+  userLoanData:any;
   userBalanceUnverified:number;
   userStatus:boolean;
   pageTitle:string;
@@ -19,10 +21,11 @@ export class ViewLoansComponent implements OnInit {
   userPhone:string;
   hasPendingLoan:boolean;
 
-  constructor(private dashboardService: DashboardService) { }
+  constructor(private dashboardService: DashboardService, private ViewLoansService: ViewLoansService) { }
 
   ngOnInit(): void {
     this.getUserData();
+    this.viewLoans();
   };
 
   getUserData() {
@@ -32,38 +35,22 @@ export class ViewLoansComponent implements OnInit {
       this.userPhone= res.data.phone;
       this.pageTitle = 'Fintech28 | See Transactions';
     });
+  };
 
-    this.userTransactions = [
-      {
-        principal: 45500,
-        amount: 450,
-        dateBorrowed: '2020/10/27',
-        isFullyPaid: false
-      },
-      {
-        principal: 67000,
-        amount: 450,
-        dateBorrowed: '2020/10/09',
-        isFullyPaid: true
-      },
-      {
-        principal: 13000,
-        amount: 450,
-        dateBorrowed: '2020/08/28',
-        isFullyPaid: true
-      },
-    ];
+  viewLoans() {
+    this.subscription = this.ViewLoansService.getLoans().subscribe((res) => {
+      this.userBalanceUnverified = res.data.balance;
+      this.userStatus = res.data.status;
+      this.userPhone= res.data.phone;
+      this.pageTitle = 'Fintech28 | See Transactions';
 
-    this.userTransactions.forEach(transaction => {
-      if(transaction.isFullyPaid === false) {
-        console.log(transaction);
-        return this.hasPendingLoan = true;
-      }
+      this.userLoanData = res;
     });
 
-    console.log(this.hasPendingLoan);
+    if(this.userLoanData === undefined || this.userLoanData.length < 1)
+      this.userLoanData = `No loan data`;
 
-    this.userBalance = 121350;
+    console.log(this.userLoanData);
   };
   
   processRequest() {

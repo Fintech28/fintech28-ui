@@ -49,12 +49,14 @@
                 </section>
                 <section class="data-container d-c">
                     <h3><strong>Your Balance:</strong></h3>
-                    <p><strong>Ksh. {{ userBalance }}</strong></p>
+                    <!-- <p><strong>Ksh. {{ userBalance }}</strong></p> -->
+                    <p><strong>Ksh. {{ userBalanceUnverified }}</strong></p>
                 </section>
             </div>
             <p *ngIf = "userTransactions === 'No transactions found'">
                 You have no logged transactions.<br/>
-                Deposit into your account to start your log information here.
+                <a routerLink = '/deposit'>Deposit into your account</a> to 
+                start your log information here.
             </p>
             <ul class="menu-lister" *ngIf =  "userTransactions !== 'No transactions found'">
                 <li *ngFor = 'let transaction of userTransactions'>

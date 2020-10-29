@@ -6,13 +6,27 @@ import { globalUri } from '../env/env';
 
 const endpoint = 'https://fintech28.herokuapp.com/api/v1';
 
-const HttpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-    'Authorization': 'some token here from the browser'
-  })
-};
+const token = globalUri.token;
+
+var HttpOptions;
+
+if(!token) {
+  HttpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    })
+  };
+} else {
+  HttpOptions = {
+    headers: new HttpHeaders({
+      'Authorization': token,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    })
+  };
+}
+
 
 @Injectable({
   providedIn: 'root'
