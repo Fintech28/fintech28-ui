@@ -52,23 +52,27 @@
                     <p><strong>Ksh. {{ userBalance }}</strong></p>
                 </section>
             </div>
-            <ul class="menu-lister">
+            <p *ngIf = "userTransactions === 'No transactions found'">
+                You have no logged transactions.<br/>
+                Deposit into your account to start your log information here.
+            </p>
+            <ul class="menu-lister" *ngIf =  "userTransactions !== 'No transactions found'">
                 <li *ngFor = 'let transaction of userTransactions'>
-                    <p *ngIf = "transaction.transactionType === 'Deposit'">
+                    <!-- <p *ngIf = "transaction.transactionType === 'Deposit'">
                         {{ transaction.transactionType }}
                     </p>
                     <p *ngIf = "transaction.transactionType === 'Withdrawal'">
                          {{ transaction.transactionType }}
-                    </p>
+                    </p> -->
                     <p *ngIf = "transaction.transactionType === 'Deposit'" class = "grnltlttxt">
                         Ksh. {{ transaction.amount }}
                     </p>
-                    <p *ngIf = "transaction.transactionType === 'Withdrawal'" class = "redltlttxt">
+                    <!-- <p *ngIf = "transaction.transactionType === 'Withdrawal'" class = "redltlttxt">
                         Ksh. {{ transaction.amount }}
                     </p>
                     <p>
                         {{ transaction.dateTime }}
-                    </p>
+                    </p> -->
                 </li>
             </ul>
         </div>

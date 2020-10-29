@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 
 import { DashboardService } from '../../services/dashboard.service';
 
+import { ViewTransactionsService } from '../../services/view-transactions.service';
+
 @Component({
   selector: 'app-view-transactions',
   templateUrl: './view-transactions.component.html',
@@ -18,10 +20,11 @@ export class ViewTransactionsComponent implements OnInit, OnDestroy {
   userTransactions:any;
   userPhone:string;
 
-  constructor(private dashboardService: DashboardService) { }
+  constructor(private dashboardService: DashboardService, private viewTransactionsService: ViewTransactionsService) { }
 
   ngOnInit(): void {
     this.getUserData();
+    this.viewTransactions();
   };
 
   getUserData() {
@@ -31,37 +34,21 @@ export class ViewTransactionsComponent implements OnInit, OnDestroy {
       this.userPhone= res.data.phone;
       this.pageTitle = 'Fintech28 | See Transactions';
     });
+  };
 
-    this.userTransactions = [
-      {
-        transactionType: 'Deposit',
-        amount: 450,
-        dateTime: '2020/10/27'
-      },
-      {
-        transactionType: 'Withdrawal',
-        amount: 100,
-        dateTime: '2020/10/18'
-      },
-      {
-        transactionType: 'Withdrawal',
-        amount: 1050,
-        dateTime: '2020/10/06'
-      },
-      {
-        transactionType: 'Deposit',
-        amount: 10000,
-        dateTime: '2020/10/02'
-      },
-      {
-        transactionType: 'Deposit',
-        amount: 750,
-        dateTime: '2020/09/23'
-      }
-    ];
-    this.userBalance = this.userTransactions.reduce((a, b) => ({amount: a.amount + b.amount})).amount;
+  
+  viewTransactions() {
+    this.subscription = this.viewTransactionsService.getTransactions().subscribe((res) => {
+      this.userTransactions = res.transactions;
+      this.userStatus = res.data.status;
+      this.userPhone= res.data.phone;
+      this.pageTitle = 'Fintech28 | See Transactions';
+    });
+    
+    if(this.userTransactions === undefined || this.userTransactions.length < 1) 
+      this.userTransactions = `No transactions found`;
 
-    this.userBalance = this.userBalance;
+    console.log(this.userTransactions);
   };
 
   processRequest() {
