@@ -13,8 +13,7 @@ import { DepositService } from '../../services/deposit.service';
 export class DepositComponent implements OnInit, OnDestroy {
 
   @Input() depositRequestBody = {
-    email: '',
-    password: ''
+    amount: '',
   };
 
   pageTitle:string;
@@ -35,21 +34,24 @@ export class DepositComponent implements OnInit, OnDestroy {
     });
   };
 
-  processRequest() {
-    const btn = document.querySelector('#button_');
-    const alertbox = document.querySelector('#alert_') as HTMLDivElement;
-    
-    btn.textContent = 'Processing...';
-    alertbox.style.display = 'block';
-    alertbox.textContent = 'Some feedback from API to display here';
-  };
-
   makeDeposit() {
+    const errMsg = localStorage.getItem('f28err');
+    const btn = document.querySelector('#button_');
+
+    btn.textContent = 'Processing...';
+    
     this.subscription = this.depositService.makeDeposit(this.depositRequestBody).subscribe((res) => {
       this.someData = res;
 
+      if(this.someData === undefined) {
+        this.someData = `An error occured`;
+        const alertbox = document.querySelector('#alert_') as HTMLDivElement;
+        alertbox.style.display = 'block';
+        alertbox.textContent = errMsg;
+      }
+
       console.log(this.someData);
-    })
+    });
   }
 
   ngOnDestroy() {
