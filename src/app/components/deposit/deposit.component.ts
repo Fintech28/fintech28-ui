@@ -1,7 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { DashboardService } from '../../services/dashboard.service';
+
+import { DepositService } from '../../services/deposit.service';
 
 @Component({
   selector: 'app-deposit',
@@ -10,13 +12,19 @@ import { DashboardService } from '../../services/dashboard.service';
 })
 export class DepositComponent implements OnInit, OnDestroy {
 
+  @Input() depositRequestBody = {
+    email: '',
+    password: ''
+  };
+
   pageTitle:string;
   subscription:Subscription;
   userBalance:Number;
   userStatus:boolean;
   userPhone:string;
+  someData:any;
 
-  constructor(private dashboardService: DashboardService) { }
+  constructor(private dashboardService: DashboardService, private depositService: DepositService) { }
 
   ngOnInit(): void {
     this.subscription = this.dashboardService.getAuthData().subscribe((res) => {
@@ -35,6 +43,14 @@ export class DepositComponent implements OnInit, OnDestroy {
     alertbox.style.display = 'block';
     alertbox.textContent = 'Some feedback from API to display here';
   };
+
+  makeDeposit() {
+    this.subscription = this.depositService.makeDeposit(this.depositRequestBody).subscribe((res) => {
+      this.someData = res;
+
+      console.log(this.someData);
+    })
+  }
 
   ngOnDestroy() {
     if(this.subscription) this.subscription.unsubscribe();
