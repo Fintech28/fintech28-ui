@@ -52,7 +52,7 @@ export class WithdrawService {
     }
   };
 
-  makeDeposit(amount) : Observable<any> {
+  withdrawAmount(amount) : Observable<any> {
     return this.http.post<any>(`${endpoint}/withdraw-from-account`, JSON.stringify(amount), HttpOptions).pipe(
       map((_amount) => {
         console.log(_amount);

@@ -37,17 +37,25 @@ export class DepositComponent implements OnInit, OnDestroy {
   makeDeposit() {
     const errMsg = localStorage.getItem('f28err');
     const btn = document.querySelector('#button_');
+    const alertbox = document.querySelector('#alert_') as HTMLDivElement;
 
     btn.textContent = 'Processing...';
-    
+
+    const revertBtnText = () => {
+      btn.textContent = 'Send Request';
+      alertbox.style.display = 'none';
+      localStorage.removeItem('f28err');
+    };
+
     this.subscription = this.depositService.makeDeposit(this.depositRequestBody).subscribe((res) => {
       this.someData = res;
 
       if(this.someData === undefined) {
         this.someData = `An error occured`;
-        const alertbox = document.querySelector('#alert_') as HTMLDivElement;
         alertbox.style.display = 'block';
         alertbox.textContent = errMsg;
+
+        setTimeout(revertBtnText, 3000);
       }
 
       console.log(this.someData);
