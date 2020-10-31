@@ -9,6 +9,8 @@ import { SignupComponent } from './components/signup/signup.component';
 
 import { AdminVerifyuserComponent } from './components/admin-verifyuser/admin-verifyuser.component';
 
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { DepositComponent } from './components/deposit/deposit.component';
@@ -36,6 +38,14 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'admin',
+    component: AdminDashboardComponent,
+    children: [{
+      path: 'dashboard',
+      component: AdminDashboardComponent
+    }]
   },
   {
     path: 'admin/users',

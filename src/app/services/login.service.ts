@@ -6,13 +6,27 @@ import { globalUri } from '../env/env';
 
 const endpoint = globalUri.apiGlobal;
 
-const HttpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Accept': 'application/json'
-  })
-};
+const token = globalUri.token;
 
+var HttpOptions;
+
+if(!token) {
+  console.log('No token found');
+  HttpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    })
+  };
+} else {
+  HttpOptions = {
+    headers: new HttpHeaders({
+      'Authorization': token,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    })
+  };
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -49,5 +63,5 @@ export class LoginService {
   getAuthData() : Observable<any> {
     return this.http.get<any>(`${endpoint}/logged-data`, HttpOptions);
   };
-  
+
 };
