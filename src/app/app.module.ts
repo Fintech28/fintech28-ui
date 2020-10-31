@@ -21,6 +21,7 @@ import { ViewTransactionsComponent } from './components/view-transactions/view-t
 import { AdminVerifyuserComponent } from './components/admin-verifyuser/admin-verifyuser.component';
 import { AdminApproveloanComponent } from './components/admin-approveloan/admin-approveloan.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AdminSeeUserComponent } from './components/admin-see-user/admin-see-user.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ViewTransactionsComponent,
     AdminVerifyuserComponent,
     AdminApproveloanComponent,
-    DashboardComponent
+    DashboardComponent,
+    AdminSeeUserComponent
   ],
   imports: [
     BrowserModule,

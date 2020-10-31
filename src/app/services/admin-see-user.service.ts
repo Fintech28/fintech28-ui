@@ -31,12 +31,34 @@ if(!token) {
 @Injectable({
   providedIn: 'root'
 })
-export class AdminVerifyuserService {
+export class AdminSeeUserService {
 
   constructor(private http: HttpClient) { }
 
-  seeAllUsers() : Observable<any> {
-    return this.http.get<any>(`${endpoint}/admin/users`, HttpOptions);
+  private extractData(res: Response) {
+    let body = res;
+    return body || {};
   };
 
+  private handleError<T>(operation = 'operation', result ?: T) {
+    return (error: any) : Observable<T> => {
+      console.error(error.error);
+      console.log(`${operation} failed: ${error.message}`);
+
+      console.log(error.error);
+      localStorage.setItem('f28err', error.error.error);
+
+      return of(result as T);
+    }
+  };
+
+  verifyUser(userId) : Observable<any> {
+    return this.http.post<any>(`${endpoint}/admin/verify-user/userId=:userId`, 
+    JSON.stringify(userId), HttpOptions).pipe(
+      map((_user) => {
+        console.log(_user);
+      }
+    ), catchError(this.handleError<any>('Verify user'))
+    );;
+  }
 }

@@ -7,6 +7,10 @@ import { LoginComponent } from './components/login/login.component';
 
 import { SignupComponent } from './components/signup/signup.component';
 
+import { AdminVerifyuserComponent } from './components/admin-verifyuser/admin-verifyuser.component';
+
+import { AdminSeeUserComponent } from './components/admin-see-user/admin-see-user.component';
+
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { DepositComponent } from './components/deposit/deposit.component';
@@ -20,6 +24,7 @@ import { LoanRepaymentComponent } from './components/loan-repayment/loan-repayme
 import { ViewTransactionsComponent } from './components/view-transactions/view-transactions.component';
 
 import { ViewLoansComponent } from './components/view-loans/view-loans.component';
+import { AdminSeeUserService } from './services/admin-see-user.service';
 
 
 const routes: Routes = [
@@ -34,6 +39,14 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'admin/users',
+    component: AdminVerifyuserComponent
+  },
+  {
+    path: 'admin/verifyuser/:userId',
+    component: AdminSeeUserComponent
   },
   {
     path: 'dashboard',
