@@ -30,15 +30,10 @@ export class AdminVerifyuserComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.subscription = this.dashboardService.getAuthData().subscribe((res) => {
-      this.userBalance = res.data.balance;
-      this.userStatus = res.data.status;
-      this.userPhone= res.data.phone;
-      this.pageTitle = 'Fintech28 -Admin | Verify User Account';
-    });
     this.subscription = this.AdminVerifyuserService.seeAllUsers().subscribe((res) => {
       this.users = res.data;
     });
+    this.pageTitle = 'Fintech28 -Admin | Verify User Account';
   };
 
   verifyUser(event) {
@@ -48,7 +43,6 @@ export class AdminVerifyuserComponent implements OnInit {
     
     console.log(this.userId);
     this.AdminVerifyuserService.verifyUser(this.userId).subscribe((res) => {
-      this.router.navigate(['/admin/users'])
       this.ngOnInit();
     });
   };

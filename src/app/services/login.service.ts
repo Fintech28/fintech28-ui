@@ -2,6 +2,7 @@ import { Injectable, ɵConsole } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, retry, tap, map } from 'rxjs/operators';
+import{ ActivatedRoute, Router } from '@angular/router';
 import { globalUri } from '../env/env';
 
 const endpoint = globalUri.apiGlobal;
@@ -11,7 +12,6 @@ const token = globalUri.token;
 var HttpOptions;
 
 if(!token) {
-  console.log('No token found');
   HttpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -27,6 +27,7 @@ if(!token) {
     })
   };
 }
+
 @Injectable({
   providedIn: 'root'
 })

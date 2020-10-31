@@ -1,0 +1,29 @@
+.content-container {
+    padding: 1rem;
+}
+table {
+    border: 1px solid rgb(163, 163, 163);
+    padding: 10px;
+    display: inline-block;
+    width: 80%;
+    margin: 0 20px 20px 0;
+}
+.c_ {
+    text-transform: capitalize;
+}
+.grn {
+    border: 1px solid rgb(0, 129, 0);
+    background: rgb(0, 129, 0);
+}
+.rd {
+    border: 1px solid rgb(110, 1, 1);
+    background: rgb(110, 1, 1);
+}
+.grn p, .rd p, .grn button, .rd button {
+    color: rgb(221, 221, 221);
+}
+.grn button, .rd button {
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 13px;
+}

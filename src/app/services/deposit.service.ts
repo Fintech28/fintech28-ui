@@ -11,7 +11,6 @@ const token = globalUri.token;
 var HttpOptions;
 
 if(!token) {
-  console.log('No token found');
   HttpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

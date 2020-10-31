@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
+  pageTitle:string;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.pageTitle = 'Fintech28 - Admin | Dashboard'
   }
 
 }

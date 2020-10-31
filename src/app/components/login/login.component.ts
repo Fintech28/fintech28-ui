@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginService.getAuthData().subscribe((res) => {
-      console.log(res);
       if(res || res !== undefined) this.router.navigate(['/dashboard']);
     });
   }

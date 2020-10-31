@@ -1,1 +1,82 @@
-<p>admin-approveloan works!</p>
+<title>{{ pageTitle }}</title>
+<div id="alert_"></div>
+<div class="content-container">
+    <div class="content">
+        <h2>
+            Fintech28 loans (Recent to Oldest)
+        </h2>
+        <section class="data-container">
+            <div class="data-content" *ngFor = 'let loan of loans'>
+                <table *ngIf = 'loan.isconfirmed === true' class = 'grn'>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p><strong>Requested by user ID:</strong></p>
+                            </td>
+                            <td>
+                                <p><span class = "c_">#{{ loan.byuserid }}</span></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><strong>Amount:</strong></p>
+                            </td>
+                            <td>
+                                <p>{{ loan.amount }}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><strong>Requested date:</strong></p>
+                            </td>
+                            <td>
+                                <p>{{ loan.senton.split('T')[0] }}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class = "rd">Is Approved&ensp;
+                                <i class = "fa fa-check fa-check-2x"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table *ngIf = 'loan.isconfirmed === false' class = 'rd'>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p><strong>Requested by user ID:</strong></p>
+                            </td>
+                            <td>
+                                <p><span class = "c_">#{{ loan.byuserid }}</span></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><strong>Amount:</strong></p>
+                            </td>
+                            <td>
+                                <p>{{ loan.amount }}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><strong>Requested date:</strong></p>
+                            </td>
+                            <td>
+                                <p>{{ loan.senton.split('T')[0] }}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class = "grn" id = 'btn-{{ loan.id }}' (click) = 'approveLoan($event)'>
+                                    Approve this loan
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>

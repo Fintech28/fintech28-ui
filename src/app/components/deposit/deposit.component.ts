@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 import { DashboardService } from '../../services/dashboard.service';
 
@@ -23,7 +24,8 @@ export class DepositComponent implements OnInit, OnDestroy {
   userPhone:string;
   someData:any;
 
-  constructor(private dashboardService: DashboardService, private depositService: DepositService) { }
+  constructor(private dashboardService: DashboardService, private depositService: DepositService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.subscription = this.dashboardService.getAuthData().subscribe((res) => {
@@ -37,6 +39,8 @@ export class DepositComponent implements OnInit, OnDestroy {
   makeDeposit() {
     const btn = document.querySelector('#button_');
     const alertbox = document.querySelector('#alert_') as HTMLDivElement;
+    let msg;
+    if(localStorage.getItem('f28successmessage')) msg = localStorage.getItem('f28successmessage')
 
     btn.textContent = 'Processing...';
 
@@ -48,7 +52,7 @@ export class DepositComponent implements OnInit, OnDestroy {
 
     this.subscription = this.depositService.makeDeposit(this.depositRequestBody).subscribe((res) => {
       this.someData = res;
-      
+
       const errMsg = localStorage.getItem('f28err');
 
       if(this.someData === undefined) {
@@ -58,6 +62,8 @@ export class DepositComponent implements OnInit, OnDestroy {
 
         setTimeout(revertBtnText, 3000);
       }
+      alertbox.textContent = msg;
+      this.router.navigate(['view-transactions'])
 
       console.log(this.someData);
     });

@@ -7,6 +7,8 @@ import { LoginComponent } from './components/login/login.component';
 
 import { SignupComponent } from './components/signup/signup.component';
 
+import { AdminApproveloanComponent } from './components/admin-approveloan/admin-approveloan.component';
+
 import { AdminVerifyuserComponent } from './components/admin-verifyuser/admin-verifyuser.component';
 
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
@@ -42,14 +44,18 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminDashboardComponent,
-    children: [{
-      path: 'dashboard',
-      component: AdminDashboardComponent
-    }]
+  },
+  {
+    path: 'admin/dashboard',
+    component: AdminDashboardComponent,
   },
   {
     path: 'admin/users',
-    component: AdminVerifyuserComponent
+    component: AdminVerifyuserComponent,
+  },
+  {
+    path: 'admin/loans',
+    component: AdminApproveloanComponent,
   },
   {
     path: 'dashboard',

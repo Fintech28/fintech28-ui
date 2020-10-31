@@ -22,10 +22,15 @@ export class SignupComponent implements OnInit {
 
   someData:any;
   subscription:Subscription;
+  pageTitle:string;
 
   constructor(private signUpService: SignupService, private Route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.pageTitle = 'Fintech28 | Create Account'
+    this.signUpService.getAuthData().subscribe((res) => {
+      if(res || res !== undefined) this.router.navigate(['/dashboard']);
+    });
   }
 
   createUser() {
@@ -58,8 +63,6 @@ export class SignupComponent implements OnInit {
 
         alert_.textContent = errMsg;
         alert_.style.display = 'block';
-
-        console.log('component is unsuccessful...');
 
         setTimeout(revertBtnText, 3000);
       }

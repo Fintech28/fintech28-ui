@@ -11,7 +11,6 @@ const token = globalUri.token;
 var HttpOptions;
 
 if(!token) {
-  console.log('No token found');
   HttpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -55,8 +54,6 @@ export class AdminVerifyuserService {
   seeAllUsers() : Observable<any> {
     return this.http.get<any>(`${endpoint}/admin/users`, HttpOptions);
   };
-
-  
 
   verifyUser(userId) : Observable<any> {
     return this.http.patch<any>(`${endpoint}/admin/verify-user/userId=${userId}`, HttpOptions).pipe(

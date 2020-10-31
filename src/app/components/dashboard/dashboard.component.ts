@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 import { DashboardService } from '../../services/dashboard.service';
 
@@ -15,7 +16,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   userStatus:boolean;
   pageTitle:string;
 
-  constructor(private dashboardService: DashboardService) { }
+  constructor(private dashboardService: DashboardService, private router: Router) { }
 
   ngOnInit(): void {
     this.getUserData();
@@ -26,6 +27,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
       this.userBalance = res.data.balance;
       this.userStatus = res.data.status;
       this.pageTitle = 'Fintech28 | Dashboard';
+    }, (err) => {
+      console.log(err);
+      this.router.navigate(['/login']);
     });
   };
 

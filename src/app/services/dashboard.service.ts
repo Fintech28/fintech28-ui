@@ -36,7 +36,9 @@ export class DashboardService {
   constructor(private http: HttpClient) { }
 
   getAuthData() : Observable<any> {
-    return this.http.get<any>(`${endpoint}/logged-data`, HttpOptions);
+    try {
+      return this.http.get<any>(`${endpoint}/logged-data`, HttpOptions);
+    } catch(err) { console.log(err)}
   };
-  
+
 };
