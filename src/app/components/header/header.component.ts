@@ -61,11 +61,14 @@ export class HeaderComponent implements OnInit {
       this.loggedUserPhone = res.data.phone;
       this.loggedUser = res.data.name;
       this.loggedUserStatus = res.data.status;
+
+      if(!res || res === undefined) this.router.navigate(['/login'])
     });
   }
 
   logOut() {
     localStorage.removeItem('f28authkey');
-    this.router.navigate(['/login'])
+    this.router.navigate(['/login']);
+    window.location.reload();
   }
 };

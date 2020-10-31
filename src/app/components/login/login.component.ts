@@ -16,13 +16,17 @@ export class LoginComponent implements OnInit {
   };
 
   someData: any;
+  pageTitle:string;
   
   isThisYear = new Date().getFullYear();
   constructor(private loginService: LoginService, private Route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.pageTitle = 'Fintech28 | Log In';
+
     this.loginService.getAuthData().subscribe((res) => {
       if(res || res !== undefined) this.router.navigate(['/dashboard']);
+      this.ngOnInit();
     });
   }
 

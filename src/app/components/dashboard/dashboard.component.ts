@@ -27,6 +27,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
       this.userBalance = res.data.balance;
       this.userStatus = res.data.status;
       this.pageTitle = 'Fintech28 | Dashboard';
+      if(res || res !== undefined) this.router.navigate(['/dashboard']);
+      this.ngOnInit();
     }, (err) => {
       console.log(err);
       this.router.navigate(['/login']);

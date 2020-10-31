@@ -33,7 +33,7 @@ if(!token) {
 })
 export class LoginService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   private extractData(res: Response) {
     let body = res;
@@ -56,6 +56,9 @@ export class LoginService {
     return this.http.post<any>(`${endpoint}/auth/login-user`, JSON.stringify(user), HttpOptions).pipe(
       map((_user) => {
         console.log(_user);
+        if(_user) localStorage.setItem('f28authkey', _user['data'].token)
+        window.location.reload();
+        this.router.navigate(['/dashboard']);
       }
     ), catchError(this.handleError<any>('Log in'))
     );
