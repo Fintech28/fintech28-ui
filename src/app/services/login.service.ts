@@ -44,5 +44,10 @@ export class LoginService {
       }
     ), catchError(this.handleError<any>('Log in'))
     );
-  }
+  };
+
+  getAuthData() : Observable<any> {
+    return this.http.get<any>(`${endpoint}/logged-data`, HttpOptions);
+  };
+  
 };

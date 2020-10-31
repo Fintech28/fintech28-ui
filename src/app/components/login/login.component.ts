@@ -21,6 +21,9 @@ export class LoginComponent implements OnInit {
   constructor(private loginService: LoginService, private Route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.loginService.getAuthData().subscribe((res) => {
+      if(res) this.router.navigate(['/dashboard'])
+    });
   }
 
   loginUser() {

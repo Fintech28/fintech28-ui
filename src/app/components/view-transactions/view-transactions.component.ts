@@ -30,6 +30,7 @@ export class ViewTransactionsComponent implements OnInit, OnDestroy {
   getUserData() {
     this.subscription = this.dashboardService.getAuthData().subscribe((res) => {
       this.userBalanceUnverified = res.data.balance;
+      this.userBalance = res.data.balance;
       this.userStatus = res.data.status;
       this.userPhone= res.data.phone;
       this.pageTitle = 'Fintech28 | See Transactions';
@@ -40,15 +41,9 @@ export class ViewTransactionsComponent implements OnInit, OnDestroy {
   viewTransactions() {
     this.subscription = this.viewTransactionsService.getTransactions().subscribe((res) => {
       this.userTransactions = res.transactions;
-      this.userStatus = res.data.status;
-      this.userPhone= res.data.phone;
       this.pageTitle = 'Fintech28 | See Transactions';
     });
-    
-    if(this.userTransactions === undefined || this.userTransactions.length < 1) 
-      this.userTransactions = `No transactions found`;
-
-    console.log(this.userTransactions);
+    // console.log(this.userTransactions);
   };
 
   processRequest() {

@@ -35,7 +35,6 @@ export class DepositComponent implements OnInit, OnDestroy {
   };
 
   makeDeposit() {
-    const errMsg = localStorage.getItem('f28err');
     const btn = document.querySelector('#button_');
     const alertbox = document.querySelector('#alert_') as HTMLDivElement;
 
@@ -49,6 +48,8 @@ export class DepositComponent implements OnInit, OnDestroy {
 
     this.subscription = this.depositService.makeDeposit(this.depositRequestBody).subscribe((res) => {
       this.someData = res;
+      
+      const errMsg = localStorage.getItem('f28err');
 
       if(this.someData === undefined) {
         this.someData = `An error occured`;

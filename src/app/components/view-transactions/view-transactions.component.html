@@ -1,16 +1,13 @@
 <title>{{ pageTitle }}</title>
 <app-header></app-header>
 <div id="main-content-umbrella-container">
-    <div class="top-content">
+    <div class="top-content" *ngIf = 'userStatus === false'>
         <p><strong><u>My Transactions</u></strong></p>
         <section class="data-container">
             <div class="stat-container">
-                <h3 *ngIf = 'userStatus === false' class = "unv-stat" style = "color: rgb(216, 215, 215); font-size: 13px;">
+                <h3 class = "unv-stat" style = "color: rgb(216, 215, 215); font-size: 13px;">
                     <strong>Your Account is still unverified:</strong>
                     Wait for an admin to verify your account.
-                </h3>
-                <h3 *ngIf = 'userStatus === true' class = "v-stat" style = "color: rgb(216, 215, 215); font-size: 13px;">
-                    <strong>Verified<span class = "i-spanned"><i class = "fa fa-checkmark"></i></span></strong>
                 </h3>
             </div>
         </section>
@@ -36,8 +33,6 @@
     </div><hr/>
     <div class="menu-container">
         <div class="menu-content">
-            <p><i>Display this if valid transactions log<br/>
-                Will add conditional when implementing service subscription</i></p>
             <div class="top-content">
                 <p><strong><u>My Transactions</u></strong></p>
                 <section class="data-container">
@@ -49,8 +44,7 @@
                 </section>
                 <section class="data-container d-c">
                     <h3><strong>Your Balance:</strong></h3>
-                    <!-- <p><strong>Ksh. {{ userBalance }}</strong></p> -->
-                    <p><strong>Ksh. {{ userBalanceUnverified }}</strong></p>
+                    <p><strong>Ksh. {{ userBalance }}</strong></p>
                 </section>
             </div>
             <p *ngIf = "userTransactions === 'No transactions found'">
@@ -58,23 +52,23 @@
                 <a routerLink = '/deposit'>Deposit into your account</a> to 
                 start your log information here.
             </p>
-            <ul class="menu-lister" *ngIf =  "userTransactions !== 'No transactions found'">
+            <ul class="menu-lister">
                 <li *ngFor = 'let transaction of userTransactions'>
-                    <!-- <p *ngIf = "transaction.transactionType === 'Deposit'">
-                        {{ transaction.transactionType }}
+                    <p *ngIf = "transaction.transactiontype === 'Deposit'">
+                        {{ transaction.transactiontype }}
                     </p>
-                    <p *ngIf = "transaction.transactionType === 'Withdrawal'">
-                         {{ transaction.transactionType }}
-                    </p> -->
-                    <p *ngIf = "transaction.transactionType === 'Deposit'" class = "grnltlttxt">
+                    <p *ngIf = "transaction.transactiontype === 'Withdrawal'">
+                         {{ transaction.transactiontype }}
+                    </p>
+                    <p *ngIf = "transaction.transactiontype === 'Deposit'" class = "grnltlttxt">
                         Ksh. {{ transaction.amount }}
                     </p>
-                    <!-- <p *ngIf = "transaction.transactionType === 'Withdrawal'" class = "redltlttxt">
+                    <p *ngIf = "transaction.transactiontype === 'Withdrawal'" class = "redltlttxt">
                         Ksh. {{ transaction.amount }}
                     </p>
                     <p>
-                        {{ transaction.dateTime }}
-                    </p> -->
+                        {{ transaction.datetime.split('T')[0] }}
+                    </p>
                 </li>
             </ul>
         </div>
