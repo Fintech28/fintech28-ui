@@ -16,9 +16,9 @@
             </div>
             <div class="input-container">
                 <label for="amount">Enter amount</label>
-                <input type="number" class = "inputfield" name = "amount">
+                <input type="number" class = "inputfield" name = "amount" [(ngModel)] = "depositRequestBody.amount">
             </div>
-              <button type="button" id = "button_" (click) = 'processRequest()'>Send Request</button>
+              <button type="button" id = "button_" (click) = 'applyForLoan()'>Send Request</button>
           </form>
         </div>
     </div>

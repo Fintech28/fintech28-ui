@@ -46,15 +46,6 @@ export class ViewTransactionsComponent implements OnInit, OnDestroy {
     // console.log(this.userTransactions);
   };
 
-  processRequest() {
-    const btn = document.querySelector('#button_');
-    const alertbox = document.querySelector('#alert_') as HTMLDivElement;
-    
-    btn.textContent = 'Processing...';
-    alertbox.style.display = 'block';
-    alertbox.textContent = 'Some feedback from API to display here';
-  };
-
   ngOnDestroy() {
     if(this.subscription) this.subscription.unsubscribe
   }

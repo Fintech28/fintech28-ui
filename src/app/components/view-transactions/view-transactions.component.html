@@ -27,11 +27,11 @@
                   <label for="amount">Sunject</label>
                   <input type="text" class = "inputfield" name = "email" value = "Account verification&hellip;">
               </div>
-                <button type="button" id = "button_" (click) = 'processRequest()'>Send Inquiry</button>
+                <button type="button" id = "button_">Send Inquiry</button>
             </form>
         </div>
-    </div><hr/>
-    <div class="menu-container">
+    </div>
+    <div class="menu-container" *ngIf = 'userStatus === true'>
         <div class="menu-content">
             <div class="top-content">
                 <p><strong><u>My Transactions</u></strong></p>

@@ -95,11 +95,29 @@
     cursor: pointer;
     width: 100%;
 }
+.rd, .grn {
+    width: 65%;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+}
+.rd p, .grn p {
+    color: rgb(230, 230, 230);
+    line-height: 20%;
+}
+.rd {
+    background: rgb(150, 16, 16);
+}
+.grn {
+    background-color: rgb(89, 156, 1);
+}
 .grnltlttxt {
     color: rgb(89, 156, 1);
 }
 .redltlttxt {
     color: rgb(150, 16, 16);
+}
+.stxt {
+    color: rgb(199, 199, 199);
 }
 
 /* start media css */

@@ -1,16 +1,13 @@
 <title>{{ pageTitle }}</title>
 <app-header></app-header>
 <div id="main-content-umbrella-container">
-    <div class="top-content">
+    <div class="top-content" *ngIf = 'userStatus === false'>
         <p><strong><u>My Loan history</u></strong></p>
         <section class="data-container">
             <div class="stat-container">
-                <h3 *ngIf = 'userStatus === false' class = "unv-stat" style = "color: rgb(216, 215, 215); font-size: 13px;">
+                <h3  class = "unv-stat" style = "color: rgb(216, 215, 215); font-size: 13px;">
                     <strong>Your Account is still unverified:</strong>
                     Wait for an admin to verify your account.
-                </h3>
-                <h3 *ngIf = 'userStatus === true' class = "v-stat" style = "color: rgb(216, 215, 215); font-size: 13px;">
-                    <strong>Verified<span class = "i-spanned"><i class = "fa fa-checkmark"></i></span></strong>
                 </h3>
             </div>
         </section>
@@ -33,13 +30,11 @@
                 <button type="button" id = "button_" (click) = 'processRequest()'>Send Inquiry</button>
             </form>
         </div>
-    </div><hr/>
-    <div class="menu-container">
+    </div>
+    <div class="menu-container" *ngIf = 'userStatus === true'>
         <div class="menu-content">
-            <p><i>Display this if valid loan log<br/>
-                Will add conditional when implementing service subscription</i></p>
             <div class="top-content">
-                <p><strong><u>My loan history</u></strong></p>
+                <p><strong><u>My loan history</u></strong><br/>{{ userLoanMessage }}</p>
                 <section class="data-container">
                     <div class="stat-container">
                         <h3 class = "v-stat" style = "color: rgb(216, 215, 215); font-size: 13px;">
@@ -49,25 +44,57 @@
                 </section>
                 <section class="data-container d-c">
                     <h3><strong>Your Balance:</strong></h3>
-                    <p><strong>Ksh. {{ userBalanceUnverified }}</strong></p>
+                    <p><strong>Ksh. {{ userBalance }}</strong></p>
                 </section>
             </div>
-            <ul class="menu-lister">
-                <!-- <li *ngFor = 'let transaction of userTransactions'>
-                    <p>
-                       Ksh. {{ transaction.principal }}
-                    </p>
-                    <p>
-                        {{ transaction.dateBorrowed }}
-                    </p>
-                    <p *ngIf = 'transaction.isFullyPaid === false' class = "redltlttxt">
-                        Pending repayment
-                    </p>
-                    <p *ngIf = 'transaction.isFullyPaid === true' class = "grnltlttxt">
-                        Is Paid
-                    </p>
-                </li> -->
-            </ul>
+            <div *ngFor = 'let transaction of userLoanData'>
+                <table *ngIf = 'transaction.isfullyrepaid' class = "grn">
+                    <tbody>
+                        <tr>
+                            <td>Amount borrowed:</td>
+                            <td>{{ transaction.amount }}</td>
+                        </tr>
+                        <tr>
+                            <td>Confirmed on date:</td>
+                            <td>{{ transaction.senton.split('T')[0] }}</td>
+                        </tr>
+                        <tr>
+                            <td>To be repaid by date:</td>
+                            <td>{{ transaction.dueon }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table *ngIf = '!transaction.isfullyrepaid' class = "rd">
+                    <tbody>
+                        <tr>
+                            <td><p><strong>Amount borrowed:</strong></p></td>
+                            <td><p>Ksh. {{ transaction.amount }}</p></td>
+                        </tr>
+                        <tr>
+                            <td><p><strong>Confirmed on date:</strong></p></td>
+                            <td><p>{{ transaction.senton.split('T')[0] }}</p></td>
+                        </tr>
+                        <tr>
+                            <td><p><strong>To be repaid by date:</strong></p></td>
+                            <td><p>{{ transaction.dueon }}</p></td>
+                        </tr>
+                        <tr>
+                            <td><p><strong>Amount repaid:</strong></p></td>
+                            <td><p>Ksh. {{ transaction.totalrepaid }}</p></td>
+                        </tr>
+                        <tr>
+                            <td><p><strong>Balance</strong></p></td>
+                            <td><p>Ksh. {{ transaction.amount - transaction.totalrepaid }}</p></td>
+                        </tr>
+                        <tr>
+                            <span *ngIf = 'transaction.isconfirmed === false' class = "stxt">
+                                <br/>
+                                This loan request is being processed
+                            </span>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <!-- <div class="new-app-container" *ngIf = 'hasPendingLoan === true'>
                 <p>Repay your existing loan to qualify for a new one</p>
             </div>

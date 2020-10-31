@@ -14,7 +14,9 @@ export class ViewLoansComponent implements OnInit {
   
   subscription:Subscription;
   userLoanData:any;
+  userLoanMessage:string;
   userBalanceUnverified:number;
+  userBalance:number;
   userStatus:boolean;
   pageTitle:string;
   userTransactions:any;
@@ -31,6 +33,7 @@ export class ViewLoansComponent implements OnInit {
   getUserData() {
     this.subscription = this.dashboardService.getAuthData().subscribe((res) => {
       this.userBalanceUnverified = res.data.balance;
+      this.userBalance = res.data.balance;
       this.userStatus = res.data.status;
       this.userPhone= res.data.phone;
       this.pageTitle = 'Fintech28 | See Transactions';
@@ -40,17 +43,11 @@ export class ViewLoansComponent implements OnInit {
   viewLoans() {
     this.subscription = this.ViewLoansService.getLoans().subscribe((res) => {
       this.userBalanceUnverified = res.data.balance;
-      this.userStatus = res.data.status;
-      this.userPhone= res.data.phone;
-      this.pageTitle = 'Fintech28 | See Transactions';
+      this.userLoanData = res.data;
+      this.userLoanMessage = res.message;
 
-      this.userLoanData = res;
+      console.log(this.userLoanData);
     });
-
-    if(this.userLoanData === undefined || this.userLoanData.length < 1)
-      this.userLoanData = `No loan data`;
-
-    console.log(this.userLoanData);
   };
   
   processRequest() {
