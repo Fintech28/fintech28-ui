@@ -15,18 +15,23 @@ export class AdminSeeUserComponent implements OnInit {
   pageTitle:string;
 
   constructor(
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private AdminSeeUserService: AdminSeeUserService
     ) { }
 
   ngOnInit(): void {
-    this.verifyUser();
+    const userId = this.activatedRoute.snapshot.params.userId;
+    this.userId = userId;
+    this.pageTitle = 'Fintech28 -Admin | Verify User Account';
+    console.log(this.userId);
   }
 
   verifyUser() {
     const userId = this.activatedRoute.snapshot.params.userId;
     this.userId = userId;
-    this.pageTitle = 'Fintech28 -Admin | Verify User Account';
-    console.log(this.userId);
+    this.AdminSeeUserService.verifyUser(this.userId).subscribe((res) => {
+      console.log(res);
+    });
   };
 
 }

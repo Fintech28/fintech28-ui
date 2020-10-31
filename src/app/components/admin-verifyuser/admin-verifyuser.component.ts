@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Router} from '@angular/router';
 
 import { DashboardService } from '../../services/dashboard.service';
 
@@ -24,8 +25,8 @@ export class AdminVerifyuserComponent implements OnInit {
   userId:number;
 
   constructor(
-    private dashboardService: DashboardService, 
-    private AdminVerifyuserService: AdminVerifyuserService,
+    private dashboardService: DashboardService, private AdminVerifyuserService: AdminVerifyuserService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -33,12 +34,22 @@ export class AdminVerifyuserComponent implements OnInit {
       this.userBalance = res.data.balance;
       this.userStatus = res.data.status;
       this.userPhone= res.data.phone;
-      this.pageTitle = 'Fintech28 -Admin | See Users';
+      this.pageTitle = 'Fintech28 -Admin | Verify User Account';
     });
     this.subscription = this.AdminVerifyuserService.seeAllUsers().subscribe((res) => {
       this.users = res.data;
+    });
+  };
 
-      console.log(this.users);
+  verifyUser(event) {
+    const target = event.target || event.srcElement || event.currentTarget;
+    const idAttr = target.attributes.id;
+    this.userId = idAttr.nodeValue.split('-')[1];
+    
+    console.log(this.userId);
+    this.AdminVerifyuserService.verifyUser(this.userId).subscribe((res) => {
+      this.router.navigate(['/admin/users'])
+      this.ngOnInit();
     });
   };
 

@@ -53,8 +53,7 @@ export class AdminSeeUserService {
   };
 
   verifyUser(userId) : Observable<any> {
-    return this.http.post<any>(`${endpoint}/admin/verify-user/userId=:userId`, 
-    JSON.stringify(userId), HttpOptions).pipe(
+    return this.http.patch<any>(`${endpoint}/admin/verify-user/userId=${userId}`, HttpOptions).pipe(
       map((_user) => {
         console.log(_user);
       }

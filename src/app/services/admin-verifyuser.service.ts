@@ -35,8 +35,36 @@ export class AdminVerifyuserService {
 
   constructor(private http: HttpClient) { }
 
+  private extractData(res: Response) {
+    let body = res;
+    return body || {};
+  };
+
+  private handleError<T>(operation = 'operation', result ?: T) {
+    return (error: any) : Observable<T> => {
+      console.error(error.error);
+      console.log(`${operation} failed: ${error.message}`);
+
+      console.log(error.error);
+      localStorage.setItem('f28err', error.error.error);
+
+      return of(result as T);
+    }
+  };
+
   seeAllUsers() : Observable<any> {
     return this.http.get<any>(`${endpoint}/admin/users`, HttpOptions);
   };
+
+  
+
+  verifyUser(userId) : Observable<any> {
+    return this.http.patch<any>(`${endpoint}/admin/verify-user/userId=${userId}`, HttpOptions).pipe(
+      map((_user) => {
+        console.log(_user);
+      }
+    ), catchError(this.handleError<any>('Verify user'))
+    );;
+  }
 
 }

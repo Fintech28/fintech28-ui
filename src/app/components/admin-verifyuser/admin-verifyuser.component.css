@@ -19,21 +19,11 @@ table {
     border: 1px solid rgb(110, 1, 1);
     background: rgb(110, 1, 1);
 }
-.mb {
-    padding-bottom: 1.1rem;
-}
-.grn p, .rd p, .grn button, .rd button, .grn a, .rd a {
+.grn p, .rd p, .grn button, .rd button {
     color: rgb(221, 221, 221);
-}
-.grn a, .rd a {
-    padding: 10px;
-    text-decoration: none;
-    margin-left: -5px;
-    margin-bottom: 7px;
 }
 .grn button, .rd button {
     cursor: pointer;
+    padding: 10px;
     margin-top: 13px;
-    background: transparent;
-    border: none;
 }

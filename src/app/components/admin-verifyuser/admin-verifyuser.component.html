@@ -41,7 +41,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <table *ngIf = 'user.isverified === false' class = 'rd mb'>
+                <table *ngIf = 'user.isverified === false' class = 'rd'>
                     <tbody>
                         <tr>
                             <td>
@@ -68,10 +68,10 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><br/>
-                                <a class = "grn" routerLink = '/admin/verifyuser/{{ user.id }}'>
+                            <td>
+                                <button class = "grn" id = 'btn-{{ user.id }}' (click) = 'verifyUser($event)'>
                                     Verify Account
-                                </a>
+                                </button>
                             </td>
                         </tr>
                     </tbody>
