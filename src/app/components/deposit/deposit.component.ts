@@ -40,7 +40,7 @@ export class DepositComponent implements OnInit, OnDestroy {
     const btn = document.querySelector('#button_');
     const alertbox = document.querySelector('#alert_') as HTMLDivElement;
     let msg;
-    if(localStorage.getItem('f28successmessage')) msg = localStorage.getItem('f28successmessage')
+    if(localStorage.getItem('f28successmessage')) msg = localStorage.getItem('f28successmessage');
 
     btn.textContent = 'Processing...';
 

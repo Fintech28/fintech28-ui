@@ -15,7 +15,7 @@
                         <li>
                             <i class="fa fa-cog fa-cog-2x"></i><span class="user_act">&ensp;Settings</span>
                         </li>
-                        <li>
+                        <li (click) = "logOut()">
                             <i class="fa fa-sign-out fa-sign-out-2x"></i><span class="user_act">&ensp;Log Out</span>
                         </li>
                         <hr/>
@@ -28,21 +28,24 @@
                     </section>
                 </ul>
                 <li class = "acc_mthd">
+                    <a routerLink = '/dashboard'><strong>Home</strong></a>
+                </li>
+                <li class = "acc_mthd">
                     <a routerLink = '/deposit'>Deposit to my account</a>
                 </li>
                 <li class = "acc_mthd">
                     <a routerLink = '/withdraw'>Withdraw from my account</a>
                 </li>
                 <li class = "acc_mthd">
-                    <a routerLink = '/get-loan'>Apply for loan</a>
+                    <a routerLink = '/apply-for-loan'>Apply for loan</a>
                 </li>
                 <li class = "acc_mthd">
-                    <a [routerLink] = "['/repay-loan/', loanId]">Repay current loan</a>
+                    <a routerLink = '/repay-loan/1'>Repay current loan</a>
                 </li>
                 <li class = "acc_mthd">
-                    <a routerLink = '/transactions'>View transactions log</a>
+                    <a routerLink = '/view-transactions'>View transactions log</a>
                 <li class = "acc_mthd">
-                    <a routerLink = '/lons'>View loan history</a>
+                    <a routerLink = '/view-loans'>View loan history</a>
                 </li>
             </ul>
         </nav>

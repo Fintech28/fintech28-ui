@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 import { DashboardService } from '../../services/dashboard.service';
 
@@ -11,8 +12,6 @@ import { DashboardService } from '../../services/dashboard.service';
 export class HeaderComponent implements OnInit {
 
   subscription:Subscription;
-
-  loanId = 2;
   loggedUser:string;
   loggedUserPhone:string;
   loggedUserEmail:string;
@@ -21,10 +20,9 @@ export class HeaderComponent implements OnInit {
   displayUserMenu = () => {};
   displayUserOptions = () => {};
 
-  constructor(private dashboardService: DashboardService) { }
+  constructor(private dashboardService: DashboardService, private router: Router) { }
 
   ngOnInit(): void {
-    this.loanId = 3;
     this.displayUserMenu = () => {
       const toToggle = document.querySelector('.user-actionable');
       const toggleButton = document.querySelector('.usrnm');
@@ -64,5 +62,10 @@ export class HeaderComponent implements OnInit {
       this.loggedUser = res.data.name;
       this.loggedUserStatus = res.data.status;
     });
+  }
+
+  logOut() {
+    localStorage.removeItem('f28authkey');
+    this.router.navigate(['/login'])
   }
 };
