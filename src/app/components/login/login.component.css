@@ -5,13 +5,12 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active  {
     -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
     box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
-    color: rgb(148, 148, 148);
+    -webkit-text-fill-color: rgb(148, 148, 148);
 }
 .wrapper-container {
     padding: 1rem;
 }
 .form-content {
-    /* background: rgb(197, 197, 197); */
     position: relative;
     width: 45%;
     height: 320px;

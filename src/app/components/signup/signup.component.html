@@ -1,54 +1,38 @@
 <title>{{ pageTitle }}</title>
-<div id="alert_"></div>
-<div class="umbrella-container">
-
-    <section class="logo-content">
-        <img src="assets/images/f28-logo.png" alt="logo-image">
-    </section>
-
-    <div class="umbrella">
-        <div class="top-nav">
-            <nav>
-                <ul>
-                    <li>
-                        <a routerLink = '/home' class = "a_cov">Go back to main page</a>
-                    </li>
-                    <li>
-                        <strong>Already have an exisitng account?&ensp;</strong>
-                        <a routerLink = '/login' class = "a_cov">Click here to log in</a>
-                    </li>
-                </ul>
-            </nav>
+    <div class="wrapper-container">
+        <div class="wrapper-content">
+            <div class="form-content">
+                <form class="form_">
+                    <div class="msg-box -mb h">
+                        <span class="close-btn" (click) = "exitBox()">&times;</span>
+                        <span id = 'alerter'>Email or phone already exists</span>
+                    </div>
+                    <div class="input-content">
+                        <label for="">Name</label>
+                        <input type="text" name="name" id="name" class = "inputfield" [(ngModel)] = "userModel.name">
+                    </div>
+                    <div class="input-content">
+                        <label for="">Email</label>
+                        <input type="email" name="email" id="email" class = "inputfield" [(ngModel)] = "userModel.email">
+                    </div>
+                    <div class="input-content">
+                        <label for="phone">Phone</label>
+                        <input type="text" name="phone" id="phone" class = "inputfield" [(ngModel)] = "userModel.phone">
+                    </div>
+                    <div class="input-content">
+                        <label for="">Password</label>
+                        <input type="password" name="password" id="password" class = "inputfield" [(ngModel)] = "userModel.password">
+                    </div>
+                    <div class="input-content">
+                        <p>Already have an account?<br/><a routerLink = '/login' class = "link">Log in here</a></p>
+                    </div>
+                    <div class="input-content">
+                        <button class="btn-primary" id = "submit-btn" (click) = "createUser()">Create my account</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-
-    <div class="form-container">
-        <div class="form-content">
-            <form class="form_">
-                <div class="input-content">
-                    <label for="name">Name:</label>
-                    <input type="text" name="name" id="name" class = "inputfield" [(ngModel)] = "userModel.name">
-                </div>
-                <div class="input-content">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" class = "inputfield" [(ngModel)] = "userModel.email">
-                </div>
-                <div class="input-content">
-                    <label for="phone">Phone:</label>
-                    <input type="phone" name="phone" id="phone" class = "inputfield" [(ngModel)] = "userModel.phone">
-                </div>
-                <div class="input-content">
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" id="password" class = "inputfield" autocomplete="off" [(ngModel)] = "userModel.password">
-                </div>
-                <div class="input-content">
-                    <button type="button" class = "btn_p" (click) = "createUser()">Create my account</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <section class="copyright_">
         &copy; <span class="date-content">{{ isThisYear }} Fintech28</span>
     </section>
-</div>

@@ -37,12 +37,13 @@ export class SignupComponent implements OnInit {
 
     const revertBtnText = () => {
       checkerbtn.textContent = 'Create my account';
-      alert_.style.display = 'none';
+      alert_.classList.add('h');
       localStorage.removeItem('f28err');
     };
 
-    const checkerbtn = document.querySelector('.btn_p');
-    const alert_ = document.querySelector('#alert_') as HTMLDivElement;
+    const checkerbtn = document.querySelector('#submit-btn');
+    const alert_ = document.querySelector('.msg-box') as HTMLDivElement;
+    const alertmsg_ = document.querySelector('#alerter') as HTMLDivElement;
 
     checkerbtn.textContent = 'Checking. Please wait...';
 
@@ -61,15 +62,20 @@ export class SignupComponent implements OnInit {
         checkerbtn.textContent = 'Encountered an error!';
         const errMsg = localStorage.getItem('f28err');
 
-        alert_.textContent = errMsg;
-        alert_.style.display = 'block';
+        alertmsg_.textContent = errMsg;
+        alert_.classList.remove('h');
 
         setTimeout(revertBtnText, 3000);
       }
     });
 
-
   };
+
+  exitBox() {
+    document.querySelector('.close-btn').addEventListener('click', () => {
+      document.querySelector('.msg-box').classList.add('h');
+    });
+  }
 
   ngOnDestroy() {
     if(this.subscription)this.subscription.unsubscribe();
