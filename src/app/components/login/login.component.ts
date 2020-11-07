@@ -31,8 +31,9 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
-    const checkerbtn = document.querySelector('.btn_p');
-    const alert_ = document.querySelector('#alert_') as HTMLDivElement;
+    const checkerbtn = document.querySelector('#submit-btn');
+    const alert_ = document.querySelector('.msg-box') as HTMLDivElement;
+    const alertmsg_ = document.querySelector('#alerter') as HTMLDivElement;
 
     checkerbtn.textContent = 'Checking. Please wait...';
 
@@ -42,7 +43,7 @@ export class LoginComponent implements OnInit {
 
       const revertBtnText = () => {
         checkerbtn.textContent = 'Log in';
-        alert_.style.display = 'none';
+        alert_.classList.add('h');
         localStorage.removeItem('f28err');
       };
 
@@ -51,7 +52,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('f28authkey', this.someData.data.token);
         checkerbtn.textContent = 'Redirecting...';
         alert_.textContent = this.someData.message;
-        alert_.style.display = 'block';
+        alert_.classList.remove('h');
         console.log(this.someData);
         
         setTimeout(revertBtnText, 3000);
@@ -62,8 +63,8 @@ export class LoginComponent implements OnInit {
 
         const errMsg = localStorage.getItem('f28err');
 
-        alert_.textContent = errMsg;
-        alert_.style.display = 'block';
+        alertmsg_.textContent = errMsg;
+        alert_.classList.remove('h');
         console.log(this.someData);
 
         setTimeout(revertBtnText, 3000);
@@ -71,5 +72,11 @@ export class LoginComponent implements OnInit {
     });
 
 
+  };
+
+  exitBox() {
+    document.querySelector('.close-btn').addEventListener('click', () => {
+      document.querySelector('.msg-box').classList.add('h');
+    });
   };
 }

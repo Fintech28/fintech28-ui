@@ -4,8 +4,8 @@
         <div class="form-content">
             <form class="form_">
                 <div class="msg-box -mb h">
-                    <span class="close-btn">&times;</span>
-                    Email or password is incorrect
+                    <span class="close-btn" (click) = "exitBox()">&times;</span>
+                    <span id = 'alerter'></span>
                 </div>
                 <div class="input-content">
                     <label for="email">Email</label>
