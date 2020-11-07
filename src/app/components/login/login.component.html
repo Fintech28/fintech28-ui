@@ -1,46 +1,30 @@
 <title>{{ pageTitle }}</title>
-<div id="alert_"></div>
-<div class="umbrella-container">
-
-    <section class="logo-content">
-        <img src="assets/images/f28-logo.png" alt="logo-image">
-    </section>
-
-    <div class="umbrella">
-        <div class="top-nav">
-            <nav>
-                <ul>
-                    <li>
-                        <a routerLink = '/home' class = "a_cov">Go back to main page</a>
-                    </li>
-                    <li>
-                        <strong>Don't have an account?&ensp;</strong>
-                        <a routerLink = '/signup' class = "a_cov">Click here to create one</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-
-    <div class="form-container">
+<div class="wrapper-container">
+    <div class="wrapper-content">
         <div class="form-content">
-            <form action="" class="form_">
+            <form class="form_">
+                <div class="msg-box -mb h">
+                    <span class="close-btn">&times;</span>
+                    Email or password is incorrect
+                </div>
                 <div class="input-content">
-                    <label for="email">Email:</label>
+                    <label for="email">Email</label>
                     <input type="email" name="email" id="email" class = "inputfield" [(ngModel)] = "userModel.email">
                 </div>
                 <div class="input-content">
-                    <label for="password">Password:</label>
+                    <label for="password">Password</label>
                     <input type="password" name="password" id="password" class = "inputfield" [(ngModel)] = "userModel.password">
                 </div>
                 <div class="input-content">
-                    <button type="submit" class = "btn_p" (click) = "loginUser()">Login</button>
+                    <p>Don't have an account?<br/><a routerLink = '/signup' class = "link">Create one here</a></p>
+                </div>
+                <div class="input-content">
+                    <button class="btn-primary" id = "submit-btn" (click) = "loginUser()">Log In</button>
                 </div>
             </form>
         </div>
     </div>
-    
-    <section class="copyright_">
-        &copy; <span class="date-content">{{ isThisYear }} Fintech28</span>
-    </section>
 </div>
+<section class="copyright_">
+    &copy; <span class="date-content">{{ isThisYear }} Fintech28</span>
+</section>

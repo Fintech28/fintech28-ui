@@ -1,149 +1,139 @@
-#alert_ {
-    position: fixed;
-    right: 0;
-    top: 0;
-    margin: 20% 0;
-    padding: 15px;
-    padding-right: 7px;
-    border-radius: 3px;
-    border: 1px solid rgb(150, 136, 16);
-    color: rgb(214, 221, 195);
-    background :rgb(150, 136, 16);
-    width: 130px;
-    z-index: 2;
-    font-weight: 800;
-    display: none;
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+    box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+    color: rgb(148, 148, 148);
 }
-.umbrella-container {
+.wrapper-container {
+    padding: 1rem;
+}
+.form-content {
+    /* background: rgb(197, 197, 197); */
     position: relative;
-    width: 100vw;
-    height: 100vh;
-    min-height: 500px;
-    overflow: hidden;
+    width: 45%;
+    height: 320px;
+    min-width: 240px;
+    margin: 3rem auto;
+    padding: 1rem;
+    -moz-box-shadow: 0px 0px 15px rgb(117, 117, 117);
+    -webkit-box-shadow: 0px 0px 15px rgb(117, 117, 117);
+    box-shadow: 0px 0px 15px rgb(117, 117, 117);
 }
-.umbrella-container::after {
-    content: '';
+.-fc {
+    margin: 1rem auto;
+    height: 500px;
+}
+.msg-box {
     position: absolute;
-    z-index: -1;
+    width: 200px;
+    padding: 2rem 1.3rem 1rem 1rem;
+    background: rgb(238, 238, 238);
+    color: rgb(100, 100, 100);
+    -moz-box-shadow: 0px 0px 7px rgb(80, 0, 0);
+    -webkit-box-shadow: 0px 0px 7px rgb(80, 0, 0);
+    box-shadow: 0px 0px 7px rgb(80, 0, 0);
+    border-radius: 7px;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../../../assets/images/mobile-money-transfer.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: 50%;
-    opacity: 0.2;
+    margin: -1rem 0 0 80%;
+    z-index: 1;
 }
-.logo-content {
+.h {
+    display: none;
+}
+.close-btn {
+    color: rgb(80, 0, 0);
     position: absolute;
+    right: 0;
     top: 0;
-    margin: 7rem 10px;
-    width: 90px;
+    margin: 7px;
+    font-size: 1.1rem;
+    cursor: pointer;
 }
-.logo-content img {
-    width: 100%;
-}
-.top-nav ul {
-    list-style: none;
-}
-.top-nav ul li {
-    display: inline-block;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
-    border-left: 1px solid rgb(102,102, 102);
-    padding-left: 1rem;
-}
-.a_cov {
-    background-color: rgb(150, 136, 16);
-    color: rgb(255, 255, 255);
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 7px;
-}
-.form-container {
-    position: relative;
-    width: 40%;
-    min-width: 230px;
-    margin: 9rem auto;
-    margin-bottom: 2rem;
-    padding: 0.5rem;
-    background-image: linear-gradient(to right, rgb(150, 136, 16), rgb(87, 150, 16));
-}
-.input-content button {
-    margin-top: 13px;
-}
-.input-content {
-    position: relative;
-    width: 70%;
+.input-content label {
     display: block;
-    margin: 1rem 2rem;
-}
-label, .inputfield {
-    display: block;
-    margin-bottom: 10px;
-}
-label {
-    color: rgb(255, 255, 255);
 }
 .inputfield {
-    padding: 5px;
-    width: 100%;
-    border: 1px solid rgb(102, 102, 102);
-    border-radius: 3px;
-}
-.inputfield:-webkit-autofill {
-    -webkit-text-fill-color:  rgb(102, 102, 102);
-    box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
-    -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
-}
-.btn_p {
-    background-color: transparent;
-    color: rgb(255, 255, 255);
+    width: 80%;
+    margin: 1rem 0;
     padding: 10px;
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 3px;
-    cursor: pointer;
-    transition: 0.5s all;
-    font-weight: 800;
+    border: 1px solid rgb(100, 100, 100);
+    color: rgb(148, 148, 148);
+    border-radius: 7px;
 }
-.btn_p:hover {
-    background-color: rgb(150, 136, 16);
-    color: rgb(214, 221, 195);
-    border: 1px solid rgb(255, 255, 255);
+.link {
+    color: rgb(148, 148, 148);
+}
+.link:hover {
+    color: rgb(95, 90, 14);
+}
+.btn-primary {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgb(100, 100, 100);
+    color: rgb(197, 197, 197);
+    padding: 1rem;
+    font-size: 1.4rem;
+    border: 1px solid rgb(100, 100, 100);
+    cursor: pointer;
+}
+.btn-primary:hover {
+    background: rgb(95, 90, 14);
 }
 .copyright_ {
-    color: rgb(102, 102, 102);
+    position: absolute;
+    bottom: 0;
     text-align: center;
+    width: 100%;
+    color: rgb(100, 100, 100);
 }
 
-/* start meida css */
-@media screen and (max-width: 1150px) {
-    .umbrella-container {
-        overflow-y: auto;
+/* start media css */
+
+@media screen and (max-width: 768px) {
+    .form-content {
+        width: 65%;
+        margin: 7rem auto;
+        margin-bottom: 0;
     }
-    .top-nav ul li {
-        font-size: 0.9rem;
+    .-fc {
+        margin-top: 5rem;
     }
-    .a_cov {
-        padding: 5px 10px;
+    .msg-box {
+        margin: -9rem 0 0 -1rem;
+        width: 100%;
+        padding-top: 3rem;
+        animation: slideDown .5s;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-timing-function: ease-in-out;
+        transition: ease-in-out;
+    }  
+    @keyframes slideDown {
+        from {margin-top: -13rem;}
+        to {margin-top: -7rem;}
     }
-    .top-nav ul li strong {
-        display: block;
-        margin-bottom: 7px;
+    .h {
+        animation: slideUp .5s;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-timing-function: ease-in-out;
+        transition: ease-in-out;
     }
-    .logo-content {
-        right: 0;
-        margin: 1rem;
+    @keyframes slideUp {
+        from {margin-top: -7rem;}
+        to {margin-top: -13rem;}
     }
-    .form-container {
-        width: 70%;
+    .-mb {
+        margin-top: -7rem;
+    }
+    .close-btn {
+        margin-top: 25px;
+        font-size: 1.7rem;
     }
 }
-@media screen and (max-width: 1150px) {
-    .form-container {
-        margin-top: 4rem;
-    }
-}
+
 /* end media css */
