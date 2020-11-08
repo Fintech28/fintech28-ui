@@ -49,8 +49,8 @@ export class HeaderComponent implements OnInit {
       toggleButton.addEventListener('click', displayOurOptions);
     };
 
-    this.displayUserMenu();
-    this.displayUserOptions();
+    // this.displayUserMenu();
+    // this.displayUserOptions();
 
     this.getUserData();
   };

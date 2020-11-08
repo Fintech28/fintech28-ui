@@ -25,12 +25,8 @@
                             <i class="fa fa-check fa-check-2x"></i>
                             <p>Your account has been verified</p>
                         </div>
-                        <div class="notif-peeker" *ngIf = "loggedUserStatus === false">
-                            <i class="fa fa-check fa-check-2x"></i>
-                            <p>Your account is not yet verified</p>
-                        </div>
-                        <div class="notif-peeker">
-                            <i class="fa fa-check fa-check-2x"></i>
+                        <div class="notif-peeker np_f" *ngIf = "loggedUserStatus === false">
+                            <i class="fa fa-times fa-times-2x"></i>
                             <p>Your account is not yet verified</p>
                         </div>
                     </div>

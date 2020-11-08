@@ -1,15 +1,3 @@
-*:focus {
-    outline: none;
-}
-* {
-    letter-spacing: 1px;
-    line-height: 140%;
-}
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Bahnschrift Light;
-}
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
@@ -225,10 +213,18 @@ input:-webkit-autofill:active  {
     cursor: pointer;
     transition: .5s all;
 }
+.np_f {
+    box-shadow: 0 0 5px rgb(179, 0, 30);
+    background: rgba(150, 61, 1, 0.199);
+}
 .notif-peeker:hover {
     box-shadow: 0 0 5px rgb(80, 150, 1);
     background: rgba(80, 150, 1, 0.158);
     width: 71%;
+}
+.np_f:hover {
+    box-shadow: 0 0 5px rgb(150, 1, 21);
+    background: rgba(150, 1, 21, 0.158);
 }
 .notif-peeker p {
     font-size: 15px;
