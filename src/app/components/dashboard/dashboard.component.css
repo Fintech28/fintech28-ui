@@ -10,7 +10,6 @@ input:-webkit-autofill:active  {
     padding: 1rem;
 }
 .form-content {
-    /* background: rgb(197, 197, 197); */
     position: relative;
     width: 45%;
     height: 320px;
@@ -298,6 +297,10 @@ input:-webkit-autofill:active  {
 .main-content a:hover {
     background :rgba(0, 59, 73, 0.274);
     color: rgb(238, 238, 238);
+}
+.ub-content {
+    margin-left: 9rem;
+    color: rgb(80, 150, 1);
 }
 
 /* end DASHBOARD CSS */

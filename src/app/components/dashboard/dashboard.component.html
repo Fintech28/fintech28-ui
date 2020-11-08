@@ -12,12 +12,16 @@
             </section>
             <section class="user-pic-asbutton">
                 <i class="fa fa-user fa-user-2x"></i>
-                <span class = "u_" style = "margin-left: 7px;">claud watari</span>
+                <span class = "u_" style = "margin-left: 7px;">{{ loggedUser }}</span>
             </section>
         </div>
     </div>
     <main class = "mc">
         <div class="main-content">
+            <section class="ub-content">
+                <h4>Your current balance:</h4>
+                <p>Ksh. {{ userBalance  }}</p>
+            </section>
             <a routerLink = '/deposit'>
                 Deposit to my account
             </a>

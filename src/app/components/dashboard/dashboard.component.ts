@@ -15,12 +15,12 @@ export class DashboardComponent implements OnInit, OnDestroy {
   userBalance:Number;
   userStatus:boolean;
   pageTitle:string;
+  loggedUser:string;
 
   constructor(private dashboardService: DashboardService, private router: Router) { }
 
   ngOnInit(): void {
-    // this.getUserData();
-      this.pageTitle = 'Fintech28 | Dashboard';
+    this.getUserData();
   };
 
   getUserData() {
@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
       this.userBalance = res.data.balance;
       this.userStatus = res.data.status;
       this.pageTitle = 'Fintech28 | Dashboard';
+      this.loggedUser = res.data.name;
       if(res || res !== undefined) this.router.navigate(['/dashboard']);
       this.ngOnInit();
     }, (err) => {
