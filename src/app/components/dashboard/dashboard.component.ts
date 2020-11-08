@@ -19,7 +19,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   constructor(private dashboardService: DashboardService, private router: Router) { }
 
   ngOnInit(): void {
-    this.getUserData();
+    // this.getUserData();
+      this.pageTitle = 'Fintech28 | Dashboard';
   };
 
   getUserData() {

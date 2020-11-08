@@ -1,111 +1,314 @@
-.d-none {
-    display: none;
+*:focus {
+    outline: none;
 }
-.d-block {
-    display: block;
+* {
+    letter-spacing: 1px;
+    line-height: 140%;
 }
-#togglebtn {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    margin: 13px 17px;
-    color: rgb(102, 102, 102);
-    cursor: pointer;
-    display: none;
-    z-index: 2;
-}
-.header-container {
-    position: fixed;
-    right: 0;
-    top: 0;
+body {
     margin: 0;
-    height: 100vh;
-    width: 25%;
-    min-width: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-left: 1px solid rgba(102, 102, 102, 0.25);
-    background-color: rgb(255, 255, 255);
+    padding: 0;
+    font-family: Bahnschrift Light;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+    box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+    color: rgb(148, 148, 148);
+}
+.wrapper-container {
+    padding: 1rem;
+}
+.form-content {
+    /* background: rgb(197, 197, 197); */
+    position: relative;
+    width: 45%;
+    height: 320px;
+    min-width: 240px;
+    margin: 3rem auto;
+    padding: 1rem;
+    -moz-box-shadow: 0px 0px 15px rgb(117, 117, 117);
+    -webkit-box-shadow: 0px 0px 15px rgb(117, 117, 117);
+    box-shadow: 0px 0px 15px rgb(117, 117, 117);
+}
+.-fc {
+    margin: 1rem auto;
+    height: 500px;
+}
+.msg-box {
+    position: absolute;
+    width: 200px;
+    padding: 2rem 1.3rem 1rem 1rem;
+    background: rgb(238, 238, 238);
+    color: rgb(100, 100, 100);
+    -moz-box-shadow: 0px 0px 7px rgb(80, 0, 0);
+    -webkit-box-shadow: 0px 0px 7px rgb(80, 0, 0);
+    box-shadow: 0px 0px 7px rgb(80, 0, 0);
+    border-radius: 7px;
+    top: 0;
+    left: 0;
+    margin: -1rem 0 0 80%;
     z-index: 1;
 }
-.header-content {
-    position: relative;
+.h {
+    display: none;
 }
-.header-content nav ul {
-    list-style: none;
-    margin-bottom: 2rem;
-}
-.header-content nav ul li.acc_mthd {
-    margin-bottom: 2rem;
-}
-#user_section {
-    position: fixed;
-    top: 0;
-    right: 0;
-    margin: 4rem 2rem;
-    text-align: center;
-}
-.usrnm {
-    cursor: pointer;
-    border-bottom: 1px solid rgb(102, 102, 102);
-    text-transform: capitalize;
-}
-.header-content nav ul li a {
-    text-decoration: none;
-}
-.header-content nav ul li a:hover {
-    text-decoration: underline;
-}
-.user-actionable {
-    border: 1px solid rgba(102, 102, 102, 0.377);
-    border-radius: 7px;
-    background: rgb(255, 255, 255);
-    padding: 9px 7px;
-    margin-top: 9px;
-    width:  180px;
+.close-btn {
+    color: rgb(80, 0, 0);
     position: absolute;
     right: 0;
     top: 0;
-    margin: 2rem 0;
-}
-.user-actionable li {
-    margin-top: 7px;
-    margin-bottom: 3px;
-    background :rgba(102, 102, 102, 0.048);
-    border: 1px solid rgba(102, 102, 102, 0.048);
-    color: rgba(102, 102, 102, 0.720);
-    padding: 3px 13px;
+    margin: 7px;
+    font-size: 1.1rem;
     cursor: pointer;
-    text-align: left;
 }
-.user-actionable li:hover {
-    background :rgba(102, 102, 102, 0.25);
-    border: 1px solid rgba(102, 102, 102, 0.25);
-    color: rgb(150, 136, 16);
+.input-content label {
+    display: block;
 }
-.ltltxt {
-    font-size: 0.8rem;
-    color: rgb(102, 102, 102);
+.inputfield {
+    width: 80%;
+    margin: 1rem 0;
+    padding: 10px;
+    border: 1px solid rgb(100, 100, 100);
+    color: rgb(148, 148, 148);
+    border-radius: 7px;
 }
-.grnltlttxt {
-    color: rgb(150, 136, 16);
+.link {
+    color: rgb(148, 148, 148);
 }
-.redltlttxt {
-    color: rgb(150, 16, 16);
+.link:hover {
+    color: rgb(95, 90, 14);
 }
-
+.btn-primary {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgb(100, 100, 100);
+    color: rgb(197, 197, 197);
+    padding: 1rem;
+    font-size: 1.4rem;
+    border: 1px solid rgb(100, 100, 100);
+    cursor: pointer;
+}
+.btn-primary:hover {
+    background: rgb(95, 90, 14);
+}
 
 /* start media css */
 
 @media screen and (max-width: 768px) {
-    #togglebtn {
-        display: block;
+    .form-content {
+        width: 65%;
+        margin: 7rem auto;
+        margin-bottom: 0;
     }
-    .header-container {
-        display: none;
+    .-fc {
+        margin-top: 5rem;
+    }
+    .msg-box {
+        margin: -9rem 0 0 -1rem;
+        width: 100%;
+        padding-top: 3rem;
+        animation: slideDown .5s;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-timing-function: ease-in-out;
+        transition: ease-in-out;
+    }  
+    @keyframes slideDown {
+        from {margin-top: -13rem;}
+        to {margin-top: -7rem;}
+    }
+    .h {
+        animation: slideUp .5s;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-timing-function: ease-in-out;
+        transition: ease-in-out;
+    }
+    @keyframes slideUp {
+        from {margin-top: -7rem;}
+        to {margin-top: -13rem;}
+    }
+    .-mb {
+        margin-top: -7rem;
+    }
+    .close-btn {
+        margin-top: 25px;
+        font-size: 1.7rem;
     }
 }
 
 /* end media css */
+
+
+
+
+
+
+/* DASHBOARD CSS */
+.wc {
+    padding: 0;
+}
+.nav-container {
+    background: rgb(0, 68, 80);
+    color: rgb(238, 238, 238);
+    width: 22%;
+    min-width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    z-index: 1;
+}
+.nav-content h2 {
+    margin-top: 4rem;
+    margin-left: -1rem;
+    font-size: 1.1rem;
+}
+.menu-section {
+    margin-top: 4rem;
+}
+.searchbox, .nav-item {
+    position: relative;
+}
+.nav-item {
+    margin-top: 3rem;
+    text-align: left;
+}
+.nav-item p {
+    margin-left: 4rem;
+}
+.nav-item a {
+    text-decoration: none;
+    color: rgb(238, 238, 238);
+}
+.nav-item a:hover {
+    color: rgb(197, 197, 197);
+}
+.s-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 26px 2.4rem;
+    color: rgb(100, 100, 100);
+}
+.u-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 2px 2rem;
+}
+.if {
+    padding-left: 2.5rem;
+}
+.false-notify {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 1.4rem;
+    margin-top: -2px;
+    background: rgb(129, 3, 24);
+    border-radius: 50%;
+    padding: 3px 8px 0 8px;
+}
+.notif-peeker {
+    position: relative;
+    width: 70%;
+    margin: 25px auto;
+    box-shadow: 0 0 5px rgb(1, 150, 88);
+    background: rgba(1, 150, 88, 0.158);
+    padding: 13px 19px;
+    cursor: pointer;
+    transition: .5s all;
+}
+.notif-peeker:hover {
+    box-shadow: 0 0 5px rgb(80, 150, 1);
+    background: rgba(80, 150, 1, 0.158);
+    width: 71%;
+}
+.notif-peeker p {
+    font-size: 15px;
+    margin-left: 0;
+    margin-top: 5px;
+}
+.bp- {
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size: 1rem;
+    padding: 15px;
+    background: rgb(80, 0, 0);
+    transition: .5s all;
+    border-radius: 7px;
+}
+.dash-container {
+    margin-left: 25%;
+    margin-top: 2.9rem;
+    padding: 0 10px;
+}
+.nav-content- {
+    display: flex;
+}
+.search-section-top {
+    position: relative;
+    width: 43%;
+    max-height: 30px;
+    margin-top: 17px;
+    margin-left: 11rem;
+}
+.search-section-top .fa {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 7.2px 0 0 13px;
+    color: rgb(100, 100, 100);
+}
+.s-bar {
+    padding: 5px;
+    padding-left: 2rem;
+    color: rgb(100, 100, 100);
+    border: 1px solid rgba(100, 100, 100, 0.39);
+    border-radius: 20px;
+    width: 100%;
+}
+.user-pic-asbutton {
+    margin-top: 22px;
+    margin-left: 2.5rem;
+    text-transform: capitalize;
+    color: rgb(100, 100, 100);
+    cursor: pointer;
+}
+.u_ {
+    text-decoration: underline;
+}
+.mc {
+    margin-top: 4rem;
+}
+.main-content ul {
+    margin-left: -3rem;
+}
+.main-content a {
+    margin: 0 2rem 2rem 0;
+    display: inline-flex;
+    width: 250px;
+    height: 150px;
+    box-shadow: 0px 0px 5px rgb(117, 117, 117);
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+    text-align: center;
+    padding-top: 100px;
+    font-weight: 800;
+    font-size: 2rem;
+    transition: .5s all;
+}
+.main-content a:hover {
+    background :rgba(0, 59, 73, 0.274);
+    color: rgb(238, 238, 238);
+}
+
+/* end DASHBOARD CSS */
