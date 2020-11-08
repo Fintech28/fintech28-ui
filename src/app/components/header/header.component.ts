@@ -69,6 +69,6 @@ export class HeaderComponent implements OnInit {
   logOut() {
     localStorage.removeItem('f28authkey');
     this.router.navigate(['/login']);
-    // window.location.reload();
+    window.location.reload();
   }
 };

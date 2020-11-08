@@ -57,8 +57,8 @@ export class LoginService {
       map((_user) => {
         console.log(_user);
         if(_user) localStorage.setItem('f28authkey', _user['data'].token)
-        // window.location.reload();
         this.router.navigate(['/dashboard']);
+        window.location.reload();
       }
     ), catchError(this.handleError<any>('Log in'))
     );
