@@ -23,10 +23,10 @@
         </section>
         <div class="main-content">
             <section *ngFor = 'let transaction of userTransactions'>
-                <p *ngIf = "transaction.transactiontype === 'Deposit'" class = "rd">
+                <p *ngIf = "transaction.transactiontype === 'Deposit'" class = "grn">
                     {{ transaction.transactiontype }}
                 </p>
-                <p *ngIf = "transaction.transactiontype === 'Withdrawal'" class = "grn">
+                <p *ngIf = "transaction.transactiontype === 'Withdrawal'" class = "rd">
                     {{ transaction.transactiontype }}
                 </p>
                 <p>
