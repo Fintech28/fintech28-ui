@@ -1,6 +1,5 @@
 <title>{{ pageTitle }}</title>
 <app-header></app-header>
-
 <div class="dash-container">
     <div class="top-nav-content">
         <div class="nav-content-">
@@ -18,6 +17,10 @@
         </div>
     </div>
     <main class = "mc">
+        <section class="ub-content">
+            <h4>Your current balance:</h4>
+            <p>Ksh. {{ userBalance  }}</p>
+        </section>
         <div class="main-content">
             <form action="" class = "form_ data-form_">
                 <div class="msg-box -mb h">
@@ -34,3 +37,4 @@
             </form>
         </div>
     </main>
+</div>

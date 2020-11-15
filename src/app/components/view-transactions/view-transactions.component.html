@@ -1,76 +1,41 @@
 <title>{{ pageTitle }}</title>
 <app-header></app-header>
-<div id="main-content-umbrella-container">
-    <div class="top-content" *ngIf = 'userStatus === false'>
-        <p><strong><u>My Transactions</u></strong></p>
-        <section class="data-container">
-            <div class="stat-container">
-                <h3 class = "unv-stat" style = "color: rgb(216, 215, 215); font-size: 13px;">
-                    <strong>Your Account is still unverified:</strong>
-                    Wait for an admin to verify your account.
-                </h3>
-            </div>
-        </section>
-        <section class="data-container d-c">
-            <h3><strong>Your Balance:</strong></h3>
-            <p><strong>Ksh. {{ userBalanceUnverified }}</strong></p>
-        </section>
-        <div class="contact-container">
-            <p>Want to contact us to confirm your account verification?<br/>
-            Send a message by filling the form below.</p>
-            <form action="" class = "form_">
-              <div class="input-container">
-                  <label for="amount">Your phone:</label>
-                  <input type="text" class = "inputfield" name = "amount" [(ngModel)] = "userPhone" readonly>
-              </div>
-              <div class="input-container">
-                  <label for="amount">Sunject</label>
-                  <input type="text" class = "inputfield" name = "email" value = "Account verification&hellip;">
-              </div>
-                <button type="button" id = "button_">Send Inquiry</button>
-            </form>
+<div class="dash-container">
+    <div class="top-nav-content">
+        <div class="nav-content-">
+            <h4>
+                My Logs<br/>(Recent to oldest)
+            </h4>
+            <section class="search-section-top">
+                <i class="fa fa-search fa-search-2x"></i>
+                <input type="search" name="searchstring" id="searchbar" class = "s-bar">
+            </section>
+            <section class="user-pic-asbutton">
+                <i class="fa fa-user fa-user-2x"></i>
+                <span class = "u_">claud watari</span>
+            </section>
         </div>
     </div>
-    <div class="menu-container" *ngIf = 'userStatus === true'>
-        <div class="menu-content">
-            <div class="top-content">
-                <p><strong><u>My Transactions</u></strong></p>
-                <section class="data-container">
-                    <div class="stat-container">
-                        <h3 class = "v-stat" style = "color: rgb(216, 215, 215); font-size: 13px;">
-                            <strong>Verified&ensp;<span class = "i-spanned"><i class = "fa fa-check fa-check-2x"></i></span></strong>
-                        </h3>
-                    </div>
-                </section>
-                <section class="data-container d-c">
-                    <h3><strong>Your Balance:</strong></h3>
-                    <p><strong>Ksh. {{ userBalance }}</strong></p>
-                </section>
-            </div>
-            <p *ngIf = "userTransactions === 'No transactions found'">
-                You have no logged transactions.<br/>
-                <a routerLink = '/deposit'>Deposit into your account</a> to 
-                start your log information here.
-            </p>
-            <ul class="menu-lister">
-                <li *ngFor = 'let transaction of userTransactions'>
-                    <p *ngIf = "transaction.transactiontype === 'Deposit'">
-                        {{ transaction.transactiontype }}
-                    </p>
-                    <p *ngIf = "transaction.transactiontype === 'Withdrawal'">
-                         {{ transaction.transactiontype }}
-                    </p>
-                    <p *ngIf = "transaction.transactiontype === 'Deposit'" class = "grnltlttxt">
-                        Ksh. {{ transaction.amount }}
-                    </p>
-                    <p *ngIf = "transaction.transactiontype === 'Withdrawal'" class = "redltlttxt">
-                        Ksh. {{ transaction.amount }}
-                    </p>
-                    <p>
-                        {{ transaction.datetime.split('T')[0] }}
-                    </p>
-                </li>
-            </ul>
+    <main class = "mc">
+        <section class="ub-content">
+            <h4 class = "grn">Your current balance:</h4>
+            <p class = "grn">Ksh. {{ userBalance  }}</p>
+        </section>
+        <div class="main-content">
+            <section *ngFor = 'let transaction of userTransactions'>
+                <p *ngIf = "transaction.transactiontype === 'Deposit'" class = "rd">
+                    {{ transaction.transactiontype }}
+                </p>
+                <p *ngIf = "transaction.transactiontype === 'Withdrawal'" class = "grn">
+                    {{ transaction.transactiontype }}
+                </p>
+                <p>
+                    Ksh. {{ transaction.amount }}
+                </p>
+                <p>
+                    {{ transaction.datetime.split('T')[0] }}
+                </p>
+            </section>
         </div>
-    </div>
+    </main>
 </div>
