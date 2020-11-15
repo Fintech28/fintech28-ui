@@ -37,8 +37,8 @@ export class DepositComponent implements OnInit, OnDestroy {
   };
 
   makeDeposit() {
-    const btn = document.querySelector('#button_');
-    const alertbox = document.querySelector('#alert_') as HTMLDivElement;
+    const btn = document.querySelector('#submit-btn');
+    const alertbox = document.querySelector('#alert-msg') as HTMLDivElement;
     let msg;
     if(localStorage.getItem('f28successmessage')) msg = localStorage.getItem('f28successmessage');
 
@@ -63,7 +63,7 @@ export class DepositComponent implements OnInit, OnDestroy {
         setTimeout(revertBtnText, 3000);
       }
       alertbox.textContent = msg;
-      this.router.navigate(['view-transactions'])
+      this.router.navigate(['view-transactions']);
 
       console.log(this.someData);
     });

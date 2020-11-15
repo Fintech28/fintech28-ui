@@ -1,25 +1,35 @@
 <title>{{ pageTitle }}</title>
-<div id="alert_"></div>
-<app-header></app-header>
-<div id="main-content-umbrella-container">
-    <div class="top-content">
-        <p><strong><u>Deposit</u></strong></p>
-        <section class="data-container">
-        </section>
-    </div>
-    <div class="menu-container">
-        <div class="menu-content">
-          <form action="" class = "form_">
-            <div class="input-container">
-                <label for="amount">Your phone:</label>
-                <input type="text" class = "inputfield" name = "amount" value = "{{ userPhone }}" readonly>
-            </div>
-            <div class="input-container">
-                <label for="amount">Enter amount</label>
-                <input type="number" class = "inputfield" name = "amount" [(ngModel)] = "depositRequestBody.amount">
-            </div>
-              <button type="button" id = "button_" (click) = 'makeDeposit()'>Send Request</button>
-          </form>
+<div class="dash-container">
+    <div class="top-nav-content">
+        <div class="nav-content-">
+            <h4>
+                Deposit
+            </h4>
+            <section class="search-section-top">
+                <i class="fa fa-search fa-search-2x"></i>
+                <input type="search" name="searchstring" id="searchbar" class = "s-bar">
+            </section>
+            <section class="user-pic-asbutton">
+                <i class="fa fa-user fa-user-2x"></i>
+                <span class = "u_">claud watari</span>
+            </section>
         </div>
     </div>
-</div>
+    <main class = "mc">
+        <div class="main-content">
+            <p>If you have a pending loan,<br/>this amount will be used to repay the outstanding balance.</p>
+            <form action="" class = "form_ data-form_">
+                <div class="msg-box -mb h" id = "alert_">
+                    <span class="close-btn">&times;</span>
+                   <span id = "alert-msg"></span>
+                </div>
+                <div class="input-content">
+                    <label for="amount">Enter amount to deposit</label><br/>
+                    <input type="number" name="amount" id="amount" class = "inputfield"[(ngModel)] = "depositRequestBody.amount">
+                </div>
+                <div class="input-content">
+                    <button class="btn-primary" id = "submit-btn" (click) = 'makeDeposit()'>Confirm deposit</button>
+                </div>
+            </form>
+        </div>
+    </main>

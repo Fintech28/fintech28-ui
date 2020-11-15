@@ -1204,7 +1204,7 @@ class HeaderComponent {
     logOut() {
         localStorage.removeItem('f28authkey');
         this.router.navigate(['/login']);
-        // window.location.reload();
+        window.location.reload();
     }
 }
 HeaderComponent.ɵfac = function HeaderComponent_Factory(t) { return new (t || HeaderComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_dashboard_service__WEBPACK_IMPORTED_MODULE_1__["DashboardService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
@@ -3345,8 +3345,8 @@ class LoginService {
             console.log(_user);
             if (_user)
                 localStorage.setItem('f28authkey', _user['data'].token);
-            // window.location.reload();
             this.router.navigate(['/dashboard']);
+            window.location.reload();
         }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError('Log in')));
     }
     ;

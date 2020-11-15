@@ -2307,7 +2307,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "logOut",
         value: function logOut() {
           localStorage.removeItem('f28authkey');
-          this.router.navigate(['/login']); // window.location.reload();
+          this.router.navigate(['/login']);
+          window.location.reload();
         }
       }]);
 
@@ -6460,9 +6461,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           return this.http.post("".concat(endpoint, "/auth/login-user"), JSON.stringify(user), HttpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (_user) {
             console.log(_user);
-            if (_user) localStorage.setItem('f28authkey', _user['data'].token); // window.location.reload();
+            if (_user) localStorage.setItem('f28authkey', _user['data'].token);
 
             _this22.router.navigate(['/dashboard']);
+
+            window.location.reload();
           }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError('Log in')));
         }
       }, {
