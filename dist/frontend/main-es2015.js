@@ -2495,7 +2495,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function ViewTransactionsComponent_section_24_p_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -2504,7 +2504,7 @@ function ViewTransactionsComponent_section_24_p_1_Template(rf, ctx) { if (rf & 1
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", transaction_r17.transactiontype, " ");
 } }
 function ViewTransactionsComponent_section_24_p_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 11);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -2568,7 +2568,7 @@ class ViewTransactionsComponent {
     }
 }
 ViewTransactionsComponent.ɵfac = function ViewTransactionsComponent_Factory(t) { return new (t || ViewTransactionsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_dashboard_service__WEBPACK_IMPORTED_MODULE_1__["DashboardService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_view_transactions_service__WEBPACK_IMPORTED_MODULE_2__["ViewTransactionsService"])); };
-ViewTransactionsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewTransactionsComponent, selectors: [["app-view-transactions"]], decls: 25, vars: 3, consts: [[1, "dash-container"], [1, "top-nav-content"], [1, "nav-content-"], [1, "search-section-top"], [1, "fa", "fa-search", "fa-search-2x"], ["type", "search", "name", "searchstring", "id", "searchbar", 1, "s-bar"], [1, "user-pic-asbutton"], [1, "fa", "fa-user", "fa-user-2x"], [1, "u_"], [1, "mc"], [1, "ub-content"], [1, "grn"], [1, "main-content"], [4, "ngFor", "ngForOf"], ["class", "rd", 4, "ngIf"], ["class", "grn", 4, "ngIf"], [1, "rd"]], template: function ViewTransactionsComponent_Template(rf, ctx) { if (rf & 1) {
+ViewTransactionsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ViewTransactionsComponent, selectors: [["app-view-transactions"]], decls: 25, vars: 3, consts: [[1, "dash-container"], [1, "top-nav-content"], [1, "nav-content-"], [1, "search-section-top"], [1, "fa", "fa-search", "fa-search-2x"], ["type", "search", "name", "searchstring", "id", "searchbar", 1, "s-bar"], [1, "user-pic-asbutton"], [1, "fa", "fa-user", "fa-user-2x"], [1, "u_"], [1, "mc"], [1, "ub-content"], [1, "grn"], [1, "main-content"], [4, "ngFor", "ngForOf"], ["class", "grn", 4, "ngIf"], ["class", "rd", 4, "ngIf"], [1, "rd"]], template: function ViewTransactionsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "title");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
