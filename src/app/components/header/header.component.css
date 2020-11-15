@@ -1,3 +1,15 @@
+*:focus {
+    outline: none;
+}
+* {
+    letter-spacing: 1px;
+    line-height: 140%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Bahnschrift Light;
+}
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
@@ -150,12 +162,15 @@ input:-webkit-autofill:active  {
     height: 100vh;
     overflow: hidden;
     text-align: center;
-    z-index: 1;
 }
 .nav-content h2 {
     margin-top: 4rem;
     margin-left: -1rem;
     font-size: 1.1rem;
+}
+.nav-content h2 a {
+    text-decoration: none;
+    color: rgb(238, 238, 238);
 }
 .menu-section {
     margin-top: 4rem;
@@ -181,7 +196,7 @@ input:-webkit-autofill:active  {
     position: absolute;
     top: 0;
     left: 0;
-    margin: 26px 2.4rem;
+    margin: 28px 2.2rem;
     color: rgb(100, 100, 100);
 }
 .u-icon {
@@ -209,25 +224,17 @@ input:-webkit-autofill:active  {
     margin: 25px auto;
     box-shadow: 0 0 5px rgb(1, 150, 88);
     background: rgba(1, 150, 88, 0.158);
-    padding: 13px 19px;
+    padding: 13px;
     cursor: pointer;
     transition: .5s all;
-}
-.np_f {
-    box-shadow: 0 0 5px rgb(179, 0, 30);
-    background: rgba(150, 61, 1, 0.199);
 }
 .notif-peeker:hover {
     box-shadow: 0 0 5px rgb(80, 150, 1);
     background: rgba(80, 150, 1, 0.158);
     width: 71%;
 }
-.np_f:hover {
-    box-shadow: 0 0 5px rgb(150, 1, 21);
-    background: rgba(150, 1, 21, 0.158);
-}
 .notif-peeker p {
-    font-size: 15px;
+    font-size: 13px;
     margin-left: 0;
     margin-top: 5px;
 }
@@ -288,7 +295,7 @@ input:-webkit-autofill:active  {
 .main-content ul {
     margin-left: -3rem;
 }
-.main-content a {
+.main-content a, .main-content section {
     margin: 0 2rem 2rem 0;
     display: inline-flex;
     width: 250px;
@@ -302,9 +309,38 @@ input:-webkit-autofill:active  {
     font-size: 2rem;
     transition: .5s all;
 }
-.main-content a:hover {
+.main-content section {
+    cursor: pointer;
+    display: inline-block;
+    padding-top: 10px;
+    height: 270px;
+}
+.main-content section span {
+    display: block;
+}
+.main-content a:hover, .main-content section:hover {
     background :rgba(0, 59, 73, 0.274);
     color: rgb(238, 238, 238);
 }
 
 /* end DASHBOARD CSS */
+
+/* start FORMS css */
+
+.data-form_ {
+    padding: 1rem;
+    width: 60%;
+    margin: 1rem auto;
+    border: 1px solid rgb(0, 68, 80);
+    border-radius: 7px 7px 0 0;
+    position: relative;
+    min-height: 200px;
+}
+.grn {
+    color: rgb(1, 150, 88);
+}
+.rd {
+    color: rgb(129, 3, 24);
+}
+
+/* end FORMS css */

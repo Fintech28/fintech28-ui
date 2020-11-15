@@ -37,7 +37,7 @@ export class WithdrawComponent implements OnInit, OnDestroy {
   };
 
   makeDeposit() {
-    const btn = document.querySelector('#button_');
+    const btn = document.querySelector('#submit-btn');
     const alertbox = document.querySelector('#alert_') as HTMLDivElement;
     let msg;
     if(localStorage.getItem('f28successmessage')) msg = localStorage.getItem('f28successmessage');
